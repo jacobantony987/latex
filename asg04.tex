@@ -1,0 +1,70 @@
+\documentclass{article}
+% Comment the following line to NOT allow the usage of umlauts
+\usepackage[utf8]{inputenc}
+% Uncomment the following line to allow the usage of graphics (.png, .jpg)
+%\usepackage{graphicx}
+
+\title{Latex Certificate Course Instructions}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Instructions}
+\begin{enumerate}
+	\item Open day04.tex using Verbtex
+	\begin{enumerate}
+		\item Download Daily Course Material and Assignment Instructions for Day 4 (day04.tex, asg04.pdf) from Google Classroom.
+		\item Open Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/ Folder using File Manger Application.
+		\item Delete all files in ../Latex Course/ Folder.
+		\item Copy day04.tex file into Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/  Folder.
+		\item Open Verbtex Application.
+	\end{enumerate}
+	\item Exercise
+	\begin{enumerate}
+		\item Add another item at the end of enumerated list, called ``Fourth item''
+		\item Add footnote ``Assignment Day 4'' to the ``Fourth item''
+		\item Save day04.tex and Generate pdf.
+	\end{enumerate}
+	\item Upload day04.tex, and Latex Course.pdf files into Google Classroom as your response to the assignment.
+\end{enumerate}
+
+\section{\LaTeX{} Concepts}
+
+\subsection{\LaTeX{} Environments}
+\begin{itemize}
+	\item Environment \texttt{env} begins with \textbackslash{}begin\{\texttt{env}\} Command.\\ For example : \textbackslash{}begin\{document\}
+	\item Environment \texttt{env} ends with  \textbackslash{}end\{\texttt{env}\} Command.\\ For example : \textbackslash{}end\{document\}
+\end{itemize}
+
+\subsection{List Environments}
+\begin{itemize}
+	\item There are three list environments : itemize, enumerate, description
+	\item \textbackslash{}begin\{itemize\} \textbackslash{}item \dots \textbackslash{}end\{itemize\}
+	\item \textbackslash{}begin\{enumerate\} \textbackslash{}item \dots \textbackslash{}end\{enumerate\}
+	\item \textbackslash{}begin\{description\} \textbackslash{}item[\texttt{label}] \dots \textbackslash{}end\{description\}
+\end{itemize}
+
+\subsection*{Nested Environments}
+\begin{itemize}
+	\item Inner environments should be ended before ending outer environments.
+\end{itemize}
+
+\section{Bonus Material}
+\begin{itemize}
+	\item Try creating an enumerated list inside a bulleted list.
+	\item Try creating an enumerated list inside another enumerated list.
+	\item Try changing the bullet symbol of a bulleted list.
+	\item Try changing the numbering style of an enumerated list into roman.
+	\item Visit https://tex.stackexchange.com : \LaTeX{} Stackexchange Community
+	\item Visit https://tug.org : \TeX{} User's Group
+\end{itemize}
+
+
+% Uncomment the following two lines if you want to have a bibliography
+%\bibliographystyle{alpha}
+%\bibliography{document}
+
+\end{document}

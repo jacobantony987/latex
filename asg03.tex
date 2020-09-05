@@ -1,0 +1,97 @@
+\documentclass{article}
+% Comment the following line to NOT allow the usage of umlauts
+\usepackage[utf8]{inputenc}
+% Uncomment the following line to allow the usage of graphics (.png, .jpg)
+%\usepackage{graphicx}
+
+%Title Information
+\title{Latex Certificate Course Instructions}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Instructions}
+
+\begin{enumerate}
+	\item Open day03.tex in Verbtex
+	\begin{enumerate}
+		\item Download Daily Course Material and Assignment Instructions for Day 3 (day03.tex, asg03.pdf) from Google Classroom.
+		\item Open Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/ Folder using File Manger Application.
+		\item Delete all files in ../Latex Course/ Folder.
+		\item Copy day03.tex file into Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/  Folder.
+		\item Open Verbtex Application.
+	\end{enumerate}
+	\item Exercises
+	\begin{enumerate}
+		\item Add a subsection ``Combined Styles'' before \textbackslash{}end\{document\}.
+		\item Add a line ``This word is both boldface and italic.'' under the subsection ``Combined Styles''.
+		\item Add boldface style to ``word'' and ``boldface''.
+		\item Add italics style to ``word'' and ``italics''.
+		\item Save day03.tex and Generate pdf.
+	\end{enumerate}
+	\item Upload day03.tex, and Latex Course.pdf files into Google Classroom as your response to the assignment.
+\end{enumerate}
+
+\section{\LaTeX{} Concepts}
+
+\subsection{Commands and Comments}
+\begin{itemize}
+	\item The words starting with the \textbackslash{} symbol are \LaTeX{} commands.\\ For example : \textbackslash{}documentclass, \textbackslash{}usepackage, \textbackslash{}begin, \textbackslash{}section.
+	\item Everything that follows a \% symbol in a line are comments. \LaTeX{} doesn't read comments.\\ For example : \% Start the document
+\end{itemize}
+
+\subsection{\textbackslash{}begin\{document\}\dots\textbackslash{}end\{document\}}
+\begin{itemize}
+	\item Your document content will be in between these two lines.\\ Anything before \textbackslash{}begin\{document\} or after \textbackslash{}end\{document\} are not printed.
+\end{itemize}
+
+\subsection{Text Formatting}
+\begin{itemize}
+	\item \textbackslash{}textbf Boldface Fonts\\ For example : \textbackslash{}textbf\{Bold\} produces \textbf{Bold}
+	\item \textbackslash{}textit Italics Fonts\\ For example : \textbackslash{}textit\{Italics\} produces \textit{Italics}
+	\item A command may be used inside another. \\  For example : \textbackslash{}textbf\{ \textbackslash{}textit\{word\}\} produces \textbf{\textit{word}}
+\end{itemize}
+
+\subsection{Line Break Command}
+\begin{itemize}
+	\item \textbackslash{}\textbackslash{} is used for line break.
+\end{itemize}
+
+\subsection{Table of Contents}
+\begin{itemize}
+	\item \textbackslash{}tableofcontents for auto-generating Table of Contents with page numbers.
+\end{itemize}
+
+\subsection{Starred Variants}
+\begin{itemize}
+	\item \textbackslash{}section\{\dots\} has a starred variant \textbackslash{}section*\{\dots\}
+	\item Starred variants of section/subsection/subsubsection skip numbering.
+	\item Starred variants doesn't appear in Table of Contents
+	\item An additional entry into the `toc' file can be made using \textbackslash{}addcontentsline\{toc\}\{\dots\}\{\dots\}
+\end{itemize}
+
+\subsection{Logical Design}
+\begin{itemize}
+	\item In \LaTeX{}, document preparation is done in different stages.
+		\begin{enumerate}
+			\item Write your document : Text, Image, Table, \dots
+			\item Design your layout  : Paper Size, Margin, Page Decorations, \dots
+			\item Typeset your document : Font Style, Size, Spacing \dots
+		\end{enumerate}
+\end{itemize}
+
+\section{Bonus Material}
+
+\begin{itemize}
+	\item Try adding a starred section/subsection into Table of Contents without removing the star.
+	\item Visit https://en.wikibooks.org/wiki/LaTeX : \LaTeX{} wikibook
+\end{itemize}
+
+
+% Uncomment the following two lines if you want to have a bibliography
+%\bibliographystyle{alpha}
+%\bibliography{document}
+
+\end{document}

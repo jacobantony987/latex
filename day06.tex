@@ -1,0 +1,130 @@
+\documentclass[a4paper,12pt]{article}
+% Comment the following line to NOT allow the usage of umlauts
+\usepackage[utf8]{inputenc}
+% Uncomment the following line to allow the usage of graphics (.png, .jpg)
+%\usepackage{graphicx}
+
+% Required for alternate styles for lists
+\usepackage{enumitem}
+
+%Required for setting page margins
+\usepackage[left=1.5in,right=1in,top=1in,bottom=0.5in]{geometry}
+
+%Required for setting page headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\title{Latex Certificate Course}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Day 1}
+
+\subsection{Verbtex installation}
+Install Verbtex application from Google Playstore.\\
+( Note : Install a pdf viewer if you don't have one.)
+
+\subsection*{Compilation of Sample document}
+Select Local Mode.\\
+Create Project : \textit{Latex Course}\\
+Open Project.\\
+( Note : Verbtex automatically opens document.tex file. )\\
+Generate pdf.
+
+\section{Day 2}
+
+\subsection{Document Title}
+Download \textit{day02.tex} into Verbtex Project : \textit{Latex Course}\\
+Open \textbf{Verbtex} Application and Open Latex Course Project.\\
+( Note : Verbtex automatically opens \textit{day02.tex} file. )\\
+Follow instructions from \textit{asg02.pdf}\\
+Submit \textit{day02.tex} and \textit{Latex Course.pdf} files.
+
+\section{Day 3}
+
+\subsection{Text Formatting}
+Use textbf, textit Commands for boldface, italic fonts.
+
+\subsection{Table of Contents}
+Use tableofcontents Command for auto-generating Table of Contents.\\
+Always generate pdf \textbf{\textit{twice}} to update page numbers.\\
+Follow instructions from \textit{asg03.pdf}
+
+\subsection*{Combined Styles}
+\addcontentsline{toc}{subsection}{Nested Commands}
+This \textbf{\textit{word}} is both \textbf{boldface} and \textit{italic}.
+
+\section{Day 4}
+
+\subsection{Lists}
+There are three list environments in LaTeX.
+\subsubsection*{itemize environment}
+%Package enumitem is required to change itemize bullet
+	\begin{itemize}[label=\S]
+		\item This is a bulleted list.
+			\begin{enumerate}
+				\item First Subitem
+				\item Second Subitem
+			\end{enumerate}
+		\item This is second item on the list.
+	\end{itemize}
+
+\subsubsection*{enumerate environment}
+	\begin{enumerate}
+		\item First item
+%Package enumitem is required to change numbering style
+			\begin{enumerate}[label=\roman*]
+				\item First Subitem
+				\item Second Subitem
+			\end{enumerate}
+		\item Second item
+		\item Third item
+		\item Fourth item\footnote{Assignment Day 4}
+	\end{enumerate}
+
+\subsubsection*{description environment}
+	\begin{description}
+		\item[toc] table of contents
+		\item[lof] list of figures
+		\item[lot] list of tables
+	\end{description}
+
+\subsection{Footnotes}
+This word\footnote{This is a footnote} has a footnote associated to it.
+
+\section{Day 5}
+
+\subsection{Page Margin}
+\begin{itemize}
+	\item Package geometry can be used to customize page margins.
+\end{itemize}
+
+\subsection{Header \& Footer}
+\begin{itemize}
+	\item Package fancyhdr can be used to customize page headers and footers.
+\end{itemize}
+
+\section{Day 6}
+
+\subsection{Math Mode}
+\begin{itemize}
+	\item Inline mathematical expressions are written between two \$ symbols.
+	\item There are \LaTeX{} commands that work/don't work in different settings.
+\end{itemize}
+
+\subsubsection*{Superscripts \& Subscripts}
+\begin{itemize}
+	\item Superscripts are written using caret \^{}
+	\item Subscripts are written using underscore \_{}
+\end{itemize}
+% Uncomment the following two lines if you want to have a bibliography
+%\bibliographystyle{alpha}
+%\bibliography{document}
+
+\end{document}
