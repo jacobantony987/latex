@@ -25,14 +25,64 @@
 	\end{enumerate}
 	\item Exercise
 	\begin{enumerate}
+		\item Open day02.tex using Verbtex
 		\item Change title as ``Latex Course Assignment'' ie. \textbackslash{}title\{Latex \dots \}
 		\item Change author to reflect your name ie. \textbackslash{}author\{ \dots \}
 		\item Save day02.tex and Generate pdf
+		\item day02.tex, and Latex Course.pdf will be automatically saved in Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/  Folder
 	\end{enumerate}
 	\item Upload day02.tex, and Latex Course.pdf files into Google Classroom as your response to the assignment.
 \end{enumerate}
 
-\section{Bonus Material}
+\section{\LaTeX{} Concepts}
+
+\subsection{Logical Design}
+\begin{itemize}
+	\item In \LaTeX{}, document preparation is done in different stages.
+		\begin{enumerate}
+			\item Write your document : Text, Image, Table, \dots
+			\item Design your layout  : Paper Size, Margin, Page Decorations, \dots
+			\item Typeset your document : Font Style, Size, Spacing \dots
+		\end{enumerate}
+\end{itemize}
+
+\subsection{Commands and Comments}
+\begin{itemize}
+	\item The words starting with the \textbackslash{} symbol are \LaTeX{} commands.\\ For example : \textbackslash{}documentclass, \textbackslash{}usepackage, \textbackslash{}begin, \textbackslash{}section.
+	\item Everything that follows a \% symbol in a line are comments. \LaTeX{} doesn't read comments.\\ For example : \% Start the document
+\end{itemize}
+
+\subsection{\textbackslash{}begin\{document\}\dots\textbackslash{}end\{document\}}
+\begin{itemize}
+	\item Your document content will be in between these two lines.\\ Anything before \textbackslash{}begin\{document\} or after \textbackslash{}end\{document\} are not printed.
+\end{itemize}
+
+\subsection{Sectioning Commands}
+\begin{itemize}
+	\item \textbackslash{}part - not available in articles
+	\item \textbackslash{}chapter - not available in articles
+	\item \textbackslash{}section - $1^{st}$ Level Heading
+	\item \textbackslash{}subsection - $2^{nd}$ Level Heading
+	\item \textbackslash{}section - $3^{rd}$ Level Heading
+	\item \textbackslash{}paragraph - $4^{th}$ Level Heading
+	\item \textbackslash{}subparagraph -  $5^{th}$ Level Heading
+\end{itemize}
+
+\subsection{Starred Variants}
+\begin{itemize}
+	\item Every sectioning Command has a starred variant. \\ For example : \textbackslash{}section\{\dots\} has a starred variant \textbackslash{}section*\{\dots\}
+	\item Starred variants skip automatic numbering.
+\end{itemize}
+
+\subsection{Errors}
+\begin{itemize}
+	\item \LaTeX is case-sensitive. You should use exactly the same command, without even changing uppercase/lowercase.\\ For example : \textbackslash{}Documentclass\{article\} will give an error.
+	\item If \textbackslash is missing, then \LaTeX{} won't recognise the Command.
+	\item If \{ \} are not properly paired, then \LaTeX{} will give an error.
+	\item \LaTeX{} won't accept certain symbols \&, \textbackslash, \_, \%. There is an alternate scheme for printing these symbols.
+\end{itemize}
+
+\section*{Bonus Material}
 
 \begin{enumerate}
 	\item Try adding a few \textbf{section}, and \textbf{subsection} to this document.
