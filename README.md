@@ -3,9 +3,9 @@ Material for Latex Certificate Course for M.Sc. Mathematics Students
 
 # Module 1
 
-Day 01 verbtex, papeeria, latexonline.cc, LaTeX comments
+Day 01 papeeria, LaTeX 
 
-Day 02 Commands, Sectioning commands
+Day 02 Comments, Commands, Sections
 
 Day 03 Text formatting, Line break, Table of Contents
 
@@ -38,29 +38,3 @@ Day 13 overlay
 Day 14 transition
 
 Day 15 handout
-
-Day 16
-Day 17
-Day 18
-Day 19
-Day 20
-Day 21
-Day 22
-Day 23
-Day 24
-Day 25
-Day 26
-Day 27
-Day 28
-Day 29
-Day 30
-Day 31
-Day 32
-Day 33
-Day 34
-Day 35
-Day 36
-Day 37
-Day 38
-Day 39
-Day 40
