@@ -1,0 +1,73 @@
+\documentclass{article}
+
+% We will explain this later
+\usepackage[utf8]{inputenc}
+
+% Uncomment the following line to allow the usage of graphics (.png, .jpg)
+%\usepackage{graphicx}
+
+%Title Information
+\title{Latex Certificate Course Instructions}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{LaTeX Philosophy}
+	LaTeX is a free-software.
+	And is currently maintained by TUG (TeX User's Group), an online community of volunteers.
+\subsection{Readable Source}
+	The main file that we use to create a document is called `source' file or simply the `tex' file.
+	It is because they have the `tex' file extension.
+	Suppose you want to create a project report.
+	Then `project.tex' is a good name for your LaTeX source file.
+\subsubsection{Commands}
+	``How does LaTeX print symbols that are not available on Keyboard ?''
+	is an important question.
+	LaTeX uses commands for this purpose.
+	LaTeX commands starts with a backslash symbol.
+	For example : \textbackslash LaTeX prints \LaTeX.
+	Therefore, word followed by backslash is supposed to be a LaTeX command.
+	If the command is already known, then LaTeX will take the necessary action instead of adding that command into your document.
+	And if a command is unknown to LaTeX, it will fail to do anything further and will return an error message.
+
+
+	Your document content will be in between these two lines.
+	Anything before `begin-document' or after `end-document'are not printed.
+
+\subsection{Errors}
+ 	LaTeX is case-sensitive.
+	You should use exactly the same command, without even changing uppercase/lowercase.
+	For example : Document instead of document will give an error.
+
+	LaTeX won't accept certain symbols.
+
+
+	Try adding \% symbol at different places in your document.
+	Visit https://www.latex-project.org/ : LaTeX Official Website
+	Visit https://en.wikipedia.org/wiki/LaTeX : wikipedia page on LaTeX
+
+\section{Day 01 Exercise}
+\begin{enumerate}
+	\item Change the line ``Your text goes here'' into a comment.
+	\item Add some lines of text inside document environment in a readable fashion.
+\end{enumerate}
+
+
+\pagebreak
+\section{Appendix}
+\subsection{Verbtex}
+\begin{enumerate}
+	\item Download Daily Course Material and Assignment Instructions for Day 1 (day01.tex, asg01.pdf) from Google Drive.
+	\item Open Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/ Folder using File Manger Application
+	\item Delete all files in ../Latex Course/ Folder
+	\item Copy day01.tex file into Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/  Folder
+	\item Open Verbtex Application
+	\item Make necessary changes to the `day01.tex' file.
+	\item Save day01.tex and Generate pdf (internet is required to generate pdf)
+	\item The pdf `Latex Course.pdf' is at Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/  Folder
+	\item Submit day01.tex, and Latex Course.pdf files as response to the Google Classroom assignment.
+\end{enumerate}
+
+
+\end{document}

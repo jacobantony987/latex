@@ -36,17 +36,6 @@
 
 \section{\LaTeX{} Concepts}
 
-\subsection{Commands and Comments}
-\begin{itemize}
-	\item The words starting with the \textbackslash{} symbol are \LaTeX{} commands.\\ For example : \textbackslash{}documentclass, \textbackslash{}usepackage, \textbackslash{}begin, \textbackslash{}section.
-	\item Everything that follows a \% symbol in a line are comments. \LaTeX{} doesn't read comments.\\ For example : \% Start the document
-\end{itemize}
-
-\subsection{\textbackslash{}begin\{document\}\dots\textbackslash{}end\{document\}}
-\begin{itemize}
-	\item Your document content will be in between these two lines.\\ Anything before \textbackslash{}begin\{document\} or after \textbackslash{}end\{document\} are not printed.
-\end{itemize}
-
 \subsection{Text Formatting}
 \begin{itemize}
 	\item \textbackslash{}textbf Boldface Fonts\\ For example : \textbackslash{}textbf\{Bold\} produces \textbf{Bold}
@@ -62,27 +51,18 @@
 \subsection{Table of Contents}
 \begin{itemize}
 	\item \textbackslash{}tableofcontents for auto-generating Table of Contents with page numbers.
+	\item On first compilation, old toc file(if available in the current folder) is used for generating Table of Contents.
+	\item After generating Table of Contents, page numbers are updated in day03.toc
+	\item On second compilation, updated toc file is used for generating Table of Contents.
 \end{itemize}
 
-\subsection{Starred Variants}
+\subsection{Adding Starred Sections into Table of Contents}
 \begin{itemize}
-	\item \textbackslash{}section\{\dots\} has a starred variant \textbackslash{}section*\{\dots\}
-	\item Starred variants of section/subsection/subsubsection skip numbering.
 	\item Starred variants doesn't appear in Table of Contents
 	\item An additional entry into the `toc' file can be made using \textbackslash{}addcontentsline\{toc\}\{\dots\}\{\dots\}
 \end{itemize}
 
-\subsection{Logical Design}
-\begin{itemize}
-	\item In \LaTeX{}, document preparation is done in different stages.
-		\begin{enumerate}
-			\item Write your document : Text, Image, Table, \dots
-			\item Design your layout  : Paper Size, Margin, Page Decorations, \dots
-			\item Typeset your document : Font Style, Size, Spacing \dots
-		\end{enumerate}
-\end{itemize}
-
-\section{Bonus Material}
+\section*{Bonus Material}
 
 \begin{itemize}
 	\item Try adding a starred section/subsection into Table of Contents without removing the star.

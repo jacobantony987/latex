@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts,mathrsfs,eufrak}
+\usepackage{amsmath}
+
+\title{Latex Certificate Course Instructions}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Instructions}
+\begin{enumerate}
+	\item Open day07.tex using Verbtex
+	\begin{enumerate}
+		\item Download Daily Course Material and Assignment Instructions for Day 7 (day07.tex, asg07.pdf) from Google Classroom.
+		\item Open Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/ Folder using File Manger Application.
+		\item Delete all files in ../Latex Course/ Folder.
+		\item Copy day07.tex file into Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/  Folder.
+		\item Open Verbtex Application.
+	\end{enumerate}
+	\item Exercise
+	\begin{enumerate}
+		\item 
+	\end{enumerate}
+	\item Upload day07.tex, and Latex Course.pdf files into Google Classroom as your response to the assignment.
+\end{enumerate}
+
+\section{\LaTeX{} Concepts}
+
+\subsection{Mathematics Fonts}
+\begin{itemize}
+	\item Blackboard Letters : \texttt{\$\textbackslash{}mathbb\{R\}\$} produces $\mathbb{R}$ \\ For example : $\mathbb{R}$, real field.
+	\item Caligraphic Letters : \texttt{\$\textbackslash{}mathcal\{R\}\$} produces $\mathcal{R}$ \\ For example : $\mathcal{T}$ be a topology on $X$.
+	\item Ralph Smith's Letters : \texttt{\$\textbackslash{}mathscr\{R\}\$} produces $\mathscr{R}$ \\ For example : Let $\mathscr{A}$ be a Borel algebra on subset of $A$.
+	\item Fraktur Letters : \texttt{\$\textbackslash{}mathfrak\{R\}\$} produces $\mathfrak{R}$ \\ For example : Let $\mathfrak{S}$ be a complex function.
+\end{itemize}
+
+\subsection{Special Commands}
+\begin{itemize}
+	\item \texttt{\$\textbackslash{}sqrt[5]\{11\}\$} produces $\sqrt[5]{11}$
+	\item \texttt{\$\textbackslash{}frac\{12\}\{34\}\$} produces $\frac{12}{34}$ \\ For example : $\frac{x^2+1}{x+1}$
+	\item \texttt{\$\textbackslash{}binom\{n\}\{r\}\$} produces $\binom{n}{r}$ \\ For example : $\binom{n}{r} = \frac{n!}{r!(n-r)!}$
+	\item \texttt{\$\textbackslash{}pmod\{n\}\$} produces $\pmod{n}$ \\ For example : $17 \cong 4 \pmod{13}$
+	\item %sideset
+	\item %substack
+\end{itemize}
+
+\subsection{Commands and Arguments}
+\begin{itemize}
+	\item The values on which Commands work are called arguments. \\ For example : In \texttt{\$\textbackslash{}sqrt\{11\}\$}, $11$ is an argument of the Command \textbackslash{}sqrt
+	\item Some Commands also accepts optional arguments. Optional arguments are always given in `[ ]' brackets. \\ For example : In \texttt{\$\textbackslash{}sqrt[5]\{11\}\$}, $5$ is an optional argument of the Command \textbackslash{}sqrt
+	\item Some Commands take multiple arguments. \\ For example : The \textbackslash{}frac Command requires two arguments.
+\end{itemize}
+
+\subsection{Display Mode}
+\begin{itemize}
+	\item A pair of `\$ \$'s are used to print mathematics in between lines of text.\\ For example : Let \$x \textbackslash{}in X\$ and \dots produces Let $x \in X$ and \dots
+	\item `\$\$\ \$\$' or `\textbackslash{}[ \textbackslash{}]' is used to print mathematics expressions which take more than usual text height.\\ For example : \texttt{\textbackslash{}[ \textbackslash{}lim\_\{h \textbackslash{}to 0\} \textbackslash{}frac\{f(c+h)-f(c)\}\{h\} = f(c) \textbackslash{}]} \[ \lim_{h \to 0} \frac{f(c+h)-f(c)}{h} = f(c) \] 
+\end{itemize}
+
+\subsection{Equation Environment}
+\begin{itemize}
+	\item \texttt{\textbackslash{}begin\{equation\} \dots \textbackslash{}end\{equation\}}\\ For example : \texttt{\textbackslash{}begin\{equation\}e\^{}i\textbackslash{}pi + 1 = 0 \textbackslash{}end\{equation\}} \begin{equation} e^i\pi + 1 = 0 \end{equation} 
+	\item Equations are automatically numbered.
+	\item \textbackslash{}notag Command is used to skip numbering. \\ For example : \texttt{\textbackslash{}begin\{equation\} (\textbackslash{}cos \textbackslash{}theta + i \textbackslash{}sin \textbackslash{}theta)\^{}n = \textbackslash{}cos n\textbackslash{}theta + i \textbackslash{}sin n\textbackslash{}theta \textbackslash{}notag \textbackslash{}end\{equation\}} \begin{equation} (\cos \theta + i \sin \theta)^n = \cos n\theta + i \sin n\theta \notag \end{equation}
+\end{itemize}
+
+\subsection{Matrix Environment}
+\begin{itemize}
+	\item \textbackslash{}begin\{bmatrix\} \dots \textbackslash{}end\{bmatrix\} \\ For example : \texttt{\textbackslash{}[ \textbackslash{}begin\{bmatrix\} a\_\{11\} \& a\_\{12\} \& \textbackslash{}cdots \& a\_\{1n\} \textbackslash{}\textbackslash{} a\_\{21\} \& a\_\{22\} \& \textbackslash{}cdots \& a\_\{2n\} \textbackslash{}\textbackslash{} \textbackslash{}vdots \& \textbackslash{}vdots \& \textbackslash{}ddots \& \textbackslash{}vdots \textbackslash{}\textbackslash{} a\_\{m1\} \& a\_\{m2\} \& \textbackslash{}cdots \& a\_\{mn\} \textbackslash{}end\{bmatrix\} \textbackslash{}]}\[ \begin{bmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{bmatrix} \]
+	\item Matrix environments are available only in Math mode.
+	\item Five different matrix environments : bmatrix, Bmatrix, pmatrix, vmatrix and Vmatrix are available. \\ For example : \[ \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \quad \begin{Bmatrix} 1 & 2 \\ 3 & 4 \end{Bmatrix} \quad \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \quad \begin{vmatrix} 1 & 2 \\ 3 & 4 \end{vmatrix} \quad \begin{Vmatrix} 1 & 2 \\ 3 & 4 \end{Vmatrix} \]
+\end{itemize}
+
+\section*{Bonus Material}
+\begin{itemize}
+	\item Try printing $df = \frac{\partial f}{\partial x}dx +  \frac{\partial f}{\partial y}dy$ using \textbackslash{}partial, \textbackslash{}frac Commands.
+\end{itemize}
+
+\end{document}
