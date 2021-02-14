@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\title{Latex Certificate Course Instructions}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection{Text Formatting}
+\begin{itemize}
+	\item \textbackslash{}textbf Boldface Fonts\\ For example : \textbackslash{}textbf\{Bold\} produces \textbf{Bold}
+	\item \textbackslash{}textit Italics Fonts\\ For example : \textbackslash{}textit\{Italics\} produces \textit{Italics}
+	\item A command may be used inside another. \\  For example : \textbackslash{}textbf\{ \textbackslash{}textit\{word\}\} produces \textbf{\textit{word}}
+\end{itemize}
+
+\subsection{Line Break Command}
+\begin{itemize}
+	\item \textbackslash{}\textbackslash{} is used for line break.
+\end{itemize}
+
+\subsection{Table of Contents}
+\begin{itemize}
+	\item \textbackslash{}tableofcontents for auto-generating Table of Contents with page numbers.
+	\item On first compilation, old toc file(if available in the current folder) is used for generating Table of Contents.
+	\item After generating Table of Contents, page numbers are updated in day03.toc
+	\item On second compilation, updated toc file is used for generating Table of Contents.
+\end{itemize}
+
+\subsection{Adding Starred Sections into Table of Contents}
+\begin{itemize}
+	\item Starred variants doesn't appear in Table of Contents
+	\item An additional entry into the `toc' file can be made using \textbackslash{}addcontentsline\{toc\}\{\dots\}\{\dots\}
+\end{itemize}
+
+\section*{Bonus Material}
+
+\begin{itemize}
+	\item Try adding a starred section/subsection into Table of Contents without removing the star.
+	\item Visit https://en.wikibooks.org/wiki/LaTeX : \LaTeX{} wikibook
+\end{itemize}
+
+
+\end{document}
