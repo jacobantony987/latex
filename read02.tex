@@ -1,72 +1,61 @@
 \documentclass{article}
-
-% We will explain this later
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
 
-% Uncomment the following line to allow the usage of graphics (.png, .jpg)
-%\usepackage{graphicx}
-
-%Title Information
 \title{Latex Certificate Course Instructions}
 \author{Jacob Antony}
 \date{\today}
 
 \begin{document}
+
 \maketitle
-\section{LaTeX Philosophy}
-	LaTeX is a free-software.
-	And is currently maintained by TUG (TeX User's Group), an online community of volunteers.
-\subsection{Readable Source}
-	The main file that we use to create a document is called `source' file or simply the `tex' file.
-	It is because they have the `tex' file extension.
-	Suppose you want to create a project report.
-	Then `project.tex' is a good name for your LaTeX source file.
-\subsubsection{Commands}
-	``How does LaTeX print symbols that are not available on Keyboard ?''
-	is an important question.
-	LaTeX uses commands for this purpose.
-	LaTeX commands starts with a backslash symbol.
-	For example : \textbackslash LaTeX prints \LaTeX.
-	Therefore, word followed by backslash is supposed to be a LaTeX command.
-	If the command is already known, then LaTeX will take the necessary action instead of adding that command into your document.
-	And if a command is unknown to LaTeX, it will fail to do anything further and will return an error message.
+\section{Free software}
+LaTeX is a free-software. And is currently maintained by TUG (TeX User's Group), an online community of volunteers.\\
 
+There is a signficant difference between open source and free software. You won't have the freedom to sell open source softwares. But, free softwares comes with complete freedom -- free has nothing to do with the price. Thus, you may make changes for your purpose or sell copies of that software.
 
-	Your document content will be in between these two lines.
-	Anything before `begin-document' or after `end-document'are not printed.
+\section{Commands}
+``How could we use symbols that are not available on Keyboard ?'' is an important question. LaTeX uses commands for this purpose. LaTeX commands starts with a backslash symbol. For example : \textbackslash LaTeX prints \LaTeX{}.
 
-\subsection{Errors}
- 	LaTeX is case-sensitive.
-	You should use exactly the same command, without even changing uppercase/lowercase.
-	For example : Document instead of document will give an error.
+\section{Sectioning Commands}
+\begin{itemize}
+	\item \textbackslash{}part - not available for article document class
+	\item \textbackslash{}chapter - not available for article document class
+	\item \textbackslash{}section - $1^{st}$ Level Heading
+	\item \textbackslash{}subsection - $2^{nd}$ Level Heading
+	\item \textbackslash{}subsubsection - $3^{rd}$ Level Heading
+	\item \textbackslash{}paragraph - $4^{th}$ Level Heading
+	\item \textbackslash{}subparagraph -  $5^{th}$ Level Heading
+\end{itemize}
 
-	LaTeX won't accept certain symbols.
+\subsection*{Starred Variants}
+Starred variants  are used to skip automatic numbering. Every sectioning Command has a starred variant. For example : \textbackslash{}section\{\dots\} has a starred variant \textbackslash{}section*\{\dots\}
 
+\section{Errors}
+Errors are the most difficult part for a beginner. Even with error reports, it is not always easy to recognise errors in your \LaTeX{} source file. A simple technique for efficiency is to detect errors early. This can be achieved by compiling the file frequently.\\
 
-	Try adding \% symbol at different places in your document.
-	Visit https://www.latex-project.org/ : LaTeX Official Website
-	Visit https://en.wikipedia.org/wiki/LaTeX : wikipedia page on LaTeX
+The word following backslash is supposed to be a LaTeX command. If the command is already known, then LaTeX will take the necessary action. And if a command is not defined, \LaTeX{} will fail to do anything further and will return an error message.\\
 
-\section{Day 01 Exercise}
+Another important thing is the begin and end commands with `document' argument. Your document content should be between those two lines. Anything before `begin-document' or after `end-document'are not printed.
+
+Another trick is to compile after commenting off suspicious lines by adding a percentage (\%) symbol to them. Once the compilation is successful, you may enable lines one by one till you get an error report. Then you could be sure about that line causing the problem.
+
+\subsection*{Case Sensitive}
+\LaTeX{} is case-sensitive. ``What does it mean ?'' \LaTeX{} treats uppercase letters and lower case letters differently. Thus, you should use exactly the same command, without even changing the case. For example, \textbackslash begin\{\textbf{D}ocument\} instead of \textbackslash begin\{\textbf{d}ocument\} will give an error.
+
+\subsection*{Command completion feature}
+Once again, it is a difficult thing for beginners to remember commands. But, there are many softwares that offer command-completion feature. And the \LaTeX{} manuals, cheatsheets, videos and other documentations are quite abundant these days.
+
+\subsection*{Special symbols}
+LaTeX won't accept certain symbols. For example, \% symbol. \LaTeX{} comment lines starts with percentage (\%) symbol. Thus, everything on the line after \% is treated as a comment. If you want to print `15\% discount', then you will have to write `15\textbackslash\% discount'.A few more symbols follows the same logic -- \$, \&, \}, \{, \_
+
+% If brackets, \{ , \} are not properly paired, then \LaTeX{} will give an error.
+% If \textbackslash begin\{\dots\}  and \textbackslash end\{ \dots \} are not properly paired, then \LaTeX{} will give an error.
+
+\section{Important Websites}
 \begin{enumerate}
-	\item Change the line ``Your text goes here'' into a comment.
-	\item Add some lines of text inside document environment in a readable fashion.
-\end{enumerate}
-
-
-\pagebreak
-\section{Appendix}
-\subsection{Verbtex}
-\begin{enumerate}
-	\item Download Daily Course Material and Assignment Instructions for Day 1 (day01.tex, asg01.pdf) from Google Drive.
-	\item Open Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/ Folder using File Manger Application
-	\item Delete all files in ../Latex Course/ Folder
-	\item Copy day01.tex file into Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/  Folder
-	\item Open Verbtex Application
-	\item Make necessary changes to the `day01.tex' file.
-	\item Save day01.tex and Generate pdf (internet is required to generate pdf)
-	\item The pdf `Latex Course.pdf' is at Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/  Folder
-	\item Submit day01.tex, and Latex Course.pdf files as response to the Google Classroom assignment.
+	\item Visit \href{https://www.latex-project.org/}{\LaTeX{} Official Website}
+	\item Visit \href{https://en.wikipedia.org/wiki/LaTeX}{Wikipedia : \LaTeX{}}
 \end{enumerate}
 
 

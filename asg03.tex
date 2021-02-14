@@ -12,66 +12,25 @@
 \begin{document}
 \maketitle
 
-\section*{Instructions}
-
+\section{Exercises}
 \begin{enumerate}
-	\item Open day03.tex in Verbtex
-	\begin{enumerate}
-		\item Download Daily Course Material and Assignment Instructions for Day 3 (day03.tex, asg03.pdf) from Google Classroom.
-		\item Open Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/ Folder using File Manger Application.
-		\item Delete all files in ../Latex Course/ Folder.
-		\item Copy day03.tex file into Internal storage/Android/data/verbosus.verbtex/files/Local/Latex Course/  Folder.
-		\item Open Verbtex Application.
-	\end{enumerate}
-	\item Exercises
-	\begin{enumerate}
-		\item Add a subsection ``Combined Styles'' before \textbackslash{}end\{document\}.
-		\item Add a line ``This word is both boldface and italic.'' under the subsection ``Combined Styles''.
-		\item Add boldface style to ``word'' and ``boldface''.
-		\item Add italics style to ``word'' and ``italics''.
-		\item Save day03.tex and Generate pdf.
-	\end{enumerate}
-	\item Upload day03.tex, and Latex Course.pdf files into Google Classroom as your response to the assignment.
+	\item Change every subsubsection* into subsubsection and compile twice\\
+		Note that the table of contents is updated on second compilation. 
+	\item Format every occurance of `abelian' using \textbackslash textit\{\dots\}
+	\item Format every occurance of `acyclic' using \textbackslash textbf\{\dots\}
 \end{enumerate}
 
-\section{\LaTeX{} Concepts}
-
-\subsection{Text Formatting}
-\begin{itemize}
-	\item \textbackslash{}textbf Boldface Fonts\\ For example : \textbackslash{}textbf\{Bold\} produces \textbf{Bold}
-	\item \textbackslash{}textit Italics Fonts\\ For example : \textbackslash{}textit\{Italics\} produces \textit{Italics}
-	\item A command may be used inside another. \\  For example : \textbackslash{}textbf\{ \textbackslash{}textit\{word\}\} produces \textbf{\textit{word}}
-\end{itemize}
-
-\subsection{Line Break Command}
-\begin{itemize}
-	\item \textbackslash{}\textbackslash{} is used for line break.
-\end{itemize}
-
-\subsection{Table of Contents}
-\begin{itemize}
-	\item \textbackslash{}tableofcontents for auto-generating Table of Contents with page numbers.
-	\item On first compilation, old toc file(if available in the current folder) is used for generating Table of Contents.
-	\item After generating Table of Contents, page numbers are updated in day03.toc
-	\item On second compilation, updated toc file is used for generating Table of Contents.
-\end{itemize}
-
-\subsection{Adding Starred Sections into Table of Contents}
-\begin{itemize}
-	\item Starred variants doesn't appear in Table of Contents
-	\item An additional entry into the `toc' file can be made using \textbackslash{}addcontentsline\{toc\}\{\dots\}\{\dots\}
-\end{itemize}
-
-\section*{Bonus Material}
-
-\begin{itemize}
-	\item Try adding a starred section/subsection into Table of Contents without removing the star.
-	\item Visit https://en.wikibooks.org/wiki/LaTeX : \LaTeX{} wikibook
-\end{itemize}
-
-
-% Uncomment the following two lines if you want to have a bibliography
-%\bibliographystyle{alpha}
-%\bibliography{document}
-
-\end{document}
+\section{Commands}
+\begin{description}
+	\item[title] Command to input document title for maketitle command.
+	\item[author] Command to input document author for maketitle command.
+	\item[date] Command to input document date for maketitle command.
+	\item[today] Command to print current date.
+	\item[maketitle] Command to generate `Title' page using title, author, and date informations.
+	\item[tableofcontents] Command to generate `Table of Contents' page with page numbers. All unstarred-headings are automatically considered for `Table of Contents' page. On first compilation after a change, the associated `toc' file is updated. And on second compilation after the change, the `Table of Contents' page is updated to reflect the change according to `toc' file.
+	\item[textit] Command to format text into italics font style.
+	\item[textbf] Command to format text into boldface font style. 
+	%\item[textsl] Command to format text into slanted font style. 
+	%\item[textsc] Command to format text into smallcaps font style. 
+\end{description}
+ \end{document}

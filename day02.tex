@@ -1,13 +1,28 @@
 % Use percentage character (%) to add comments.
 % You may use mid-line comments as well.
 
-\documentclass{article}
-
+\documentclass{article} %This is mid-line comment.
 \usepackage[utf8]{inputenc}
 
 \begin{document}
 
-\section{Commands}
+\section{The Algebra of Complex Numbers} %This is a main heading
+A complex number is of the number of the form a + ib where a and b are real numbers and i is a square root of -1. It doesn't matter which square root is considered as i. Now real numbers are complex numbers with b = 0.
+
+\subsection{Arithmetic Operations}
+Let a+ib and c+id be two complex numbers then their sum (a+ib)+(c+id) defined as x+iy where x = a+c and y = b+d. Similarly, their difference (a+ib)-(c+id) is defined as x+iy where x = a-c and y = b-d.
+
+\subsection{Multiplication}
+Following our usual rule for the product of linear combinations, we get: (a+ib)(c+id) = (ac+iad+ibc-bd) since i is a square root of -1. Therefore, their product (a+ib)(c+id) is defined as x+iy where x = ac-bd and y = ad+bc.
+	
+\subsection*{Division is well-defined} %This is a subheading without numbering
+The question is how will you define the division operation for two complex numbers ? The division operation (x+iy)/(a+ib) is well-defined if there exists c+id such that (x+iy) = (a+ib)(c+id). Then from the defintion of product we have, x = ad-bc and y = ac+bd. We know that, if both a and b are non-zero, the system of equations has a unique solution. And, the division operation is well-defined on the grounds of multiplication operation.
+
+\subsection{Division}
+Once the existence is proved, we can compute (x+iy)/(a+ib) in easier ways. For example, (x+iy)/(a+ib) = (x+iy)(a-ib)/(a+ib)(a-ib) is much easier to compute.
+
+\subsection{Operator extension}
+The arithmetic operations defined on complex numbers is an extension of those on real numbers. We can see that, (a+i0) + (c+i0) = a+c + i0 = a+c is the same as the addition of real numbers. And, (a+i0)(c+i0) = ac + i0 = ac which is again same as the multiplication of real numbers. Clearly, substraction and division of complex numbers are extension of those for real numbers.
 
 \end{document}
 
