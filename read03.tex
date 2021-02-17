@@ -10,38 +10,95 @@
 
 \maketitle
 
-\subsection{Text Formatting}
-\begin{itemize}
-	\item \textbackslash{}textbf Boldface Fonts\\ For example : \textbackslash{}textbf\{Bold\} produces \textbf{Bold}
-	\item \textbackslash{}textit Italics Fonts\\ For example : \textbackslash{}textit\{Italics\} produces \textit{Italics}
-	\item A command may be used inside another. \\  For example : \textbackslash{}textbf\{ \textbackslash{}textit\{word\}\} produces \textbf{\textit{word}}
-\end{itemize}
+\section{\LaTeX{} Options}
+\LaTeX{} is qutie advanced these days. There are standard ways for doing things in \LaTeX{}. For example, if you make a psudeo-heading \textbackslash\textbackslash\\
 
-\subsection{Line Break Command}
-\begin{itemize}
-	\item \textbackslash{}\textbackslash{} is used for line break.
-\end{itemize}
+\textbackslash textbf\{\textbackslash large 2 LATEX Fonts \} \textbackslash \textbackslash\\
 
-\subsection{Table of Contents}
-\begin{itemize}
-	\item \textbackslash{}tableofcontents for auto-generating Table of Contents with page numbers.
-	\item On first compilation, old toc file(if available in the current folder) is used for generating Table of Contents.
-	\item After generating Table of Contents, page numbers are updated in day03.toc
-	\item On second compilation, updated toc file is used for generating Table of Contents.
-\end{itemize}
+instead of \textbackslash section\{\textbackslash LaTeX\{\} Fonts\} you will get\\
 
-\subsection{Adding Starred Sections into Table of Contents}
-\begin{itemize}
-	\item Starred variants doesn't appear in Table of Contents
-	\item An additional entry into the `toc' file can be made using \textbackslash{}addcontentsline\{toc\}\{\dots\}\{\dots\}
-\end{itemize}
+\textbf{\Large 2 LATEX Fonts}\\
 
-\section*{Bonus Material}
+\normalsize
+Such psudeo-headings have some defects :
+\begin{enumerate}
+	\item section and subsection dynamic numbering won't work
+	\item \LaTeX{} table of contents would ignore it.
+	\item and the spacing is different.
+\end{enumerate}
+There are many such minute details that are automatically managed by \LaTeX{}. Thus, read manuals and online forums until you get used to the way \LaTeX{} does things.
 
-\begin{itemize}
-	\item Try adding a starred section/subsection into Table of Contents without removing the star.
-	\item Visit https://en.wikibooks.org/wiki/LaTeX : \LaTeX{} wikibook
-\end{itemize}
+In general, temporary solutions and adjustments won't flow well with the \LaTeX{} documentation process. If you don't use the available commands and environments, then you will have to customize everything on your own. Things will get complicated as your document size increases. On the other hand, if you apply the standard solutions, \LaTeX{} will always generate a beautiful document with minimal effort from your end.
 
+
+\section{\LaTeX{} Fonts}
+Font defined how each character is printed on the screen/paper. There are few things to learn about \LaTeX{}'s Fonts. Before that, I would like to remind that you should not think about font related commands before completing the entire content for your document. There are two reasons for that
+\begin{enumerate}
+	\item There are environments and commands suitable for bulk customization.
+	\item Font details are quite a distraction for content preparation.
+\end{enumerate}
+The other documentation softwares might have a bad influence on you. You might tend to boldface a word or two. Better you keep an control on that urge of yours.When you are using \LaTeX{} try to follow original flow of document preparation. If you can overcome the urge to highlight words on the go, then you will always have to make corrections every time and spend a lot of time on corrections.
+
+There are five details for each font :
+\begin{enumerate}
+	\item encoding - the order in which characters appear
+	\item family - the collection of fonts of a common nature/source
+	\item series - the weight/span of characters
+	\item shape - the different forms of characters
+	\item size - the size of the characters
+\end{enumerate}
+
+We will focus more on font families, series, shapes and sizes.
+\subsection{Font Families}
+\textbackslash textrm \textrm{(Roman)}, \textbackslash textsf \textsf{(San Sherif)}, \textbackslash texttt \texttt{(Typewritter)} are a few font families. Many more font families are available in different packages.
+
+\subsection{Font Series}
+The font series specifies the weight (boldness) and span( width) of characters. \textbackslash textbf \textbf{(bold)}, \textbackslash text are a few font series.
+
+\subsection{Font Shapes}
+\textbackslash textit \textit{(italics)}, \textbackslash textsl \textsl{(slanted)}, \textbackslash textsc \textsc{(Smallcap)} are a few font shapes.
+
+\subsection{Font Sizes}
+\textbackslash tiny\tiny (tiny),\textbackslash scriptsize \scriptsize (script), \textbackslash footnotesize \footnotesize (footnote), \textbackslash small \small (small), \textbackslash normalsize \normalsize (normal), \textbackslash large \large (large), \textbackslash Large \Large (Large), \textbackslash LARGE \LARGE (LARGE), \textbackslash huge \huge (huge), \textbackslash Huge \Huge (Huge) \normalsize are the font sizes available.
+
+\section{Typesetting}
+\subsection{Readability}
+%A 66-character line is ideal for readability.
+\LaTeX{} typesetting algorithms, stretches the spaces in between characters and words automatically to enhance readability of the document.
+
+\subsection{Ligatures}
+\LaTeX{} combines a few characters to form a single glyph. You probably won't recognize them at first. For example, fi,fl,ffl,ff.
+
+\subsection{Bad Emphasis}
+Underlining makes the document look ugly, instead use \textit{italics} or \textsl{slanted} text. And, the `use of quotes' to emphasis a word or phrase \textbf{affects} readability. It is better to use the bold weight.
+
+\section{Symbols}
+The following table has the commands for commonly used symbols,
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c||c|c|}
+	\hline
+	\textbf{Command} & \textbf{Symbol} & \textbf{Command} & \textbf{Symbol} \\ \hline
+	\textbackslash textbackslash & \textbackslash & \textbackslash dots & \dots \\ \hline
+	\textbackslash textasciicircum & \textasciicircum & \textbackslash \& & \& \\ \hline
+	\textbackslash textasciitilde & \textasciitilde & \textbackslash S & \S \\ \hline
+	\textbackslash textcopyright & \textcopyright & \textbackslash \% & \% \\ \hline
+\end{tabular}
+	\caption{\LaTeX{} Symbols}
+\end{table}
+
+\subsection{Quotes and Dashes}
+\LaTeX{} offers two different quote characters ` and '. For left quote character, use the key below Esc on your keyboard. And for double quotes use them twice. It is better not to use the double quote key on your keyboard.\\
+
+There are three different dashes available in \LaTeX{}. You will have to use the dash once(-) for compound words, twice(--) for numerical ranges or thrice(---) for parenthetical phrases. And they are called hyphen, en dash, and em dash respectively.
+
+\subsection{Line Break}
+\textbackslash\textbackslash is used for line breaks. Leaving blank lines in between will also produce a line break. \LaTeX{} will consider multiple \textbf{white spaces} as a single one. Thus, multiple blank lines won't make any difference.
+
+%\subsection{Image Orientation}
+%If images are oriented differently from the text, then rotating once per page is acceptable. And rotating 90 degrees clockwise is widely preferred against 90 degrees counter-clockwise as the reader tends to read forward.
 
 \end{document}
+
+\subsection{Cross-referencing}
+Suppose you want to refer to an image/table in the same document on a different page. \LaTeX{} does have provisions for references. You are not yet there. You should mention page number explicitly as the page numbers might change as your add/remove sentences. 

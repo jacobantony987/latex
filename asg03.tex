@@ -18,19 +18,21 @@
 		Note that the table of contents is updated on second compilation. 
 	\item Format every occurance of `abelian' using \textbackslash textit\{\dots\}
 	\item Format every occurance of `acyclic' using \textbackslash textbf\{\dots\}
+	\item Insert a line break in \S1.1 `Enumerating distinct groups' before `Suppose m is a factor \dots'
 \end{enumerate}
 
 \section{Commands}
 \begin{description}
-	\item[title] Command to input document title for maketitle command.
-	\item[author] Command to input document author for maketitle command.
-	\item[date] Command to input document date for maketitle command.
-	\item[today] Command to print current date.
-	\item[maketitle] Command to generate `Title' page using title, author, and date informations.
-	\item[tableofcontents] Command to generate `Table of Contents' page with page numbers. All unstarred-headings are automatically considered for `Table of Contents' page. On first compilation after a change, the associated `toc' file is updated. And on second compilation after the change, the `Table of Contents' page is updated to reflect the change according to `toc' file.
-	\item[textit] Command to format text into italics font style.
-	\item[textbf] Command to format text into boldface font style. 
-	%\item[textsl] Command to format text into slanted font style. 
-	%\item[textsc] Command to format text into smallcaps font style. 
+	\item[\textbackslash title] Command to input document title for maketitle command.
+	\item[\textbackslash author] Command to input document author for maketitle command.
+	\item[\textbackslash date] Command to input document date for maketitle command.
+	\item[\textbackslash today] Command to print current date.
+	\item[\textbackslash maketitle] Command to generate `Title' page using title, author, and date informations.
+	\item[\textbackslash tableofcontents] Command to generate `Table of Contents' page with page numbers. All unstarred-headings are automatically considered for `Table of Contents' page. On first compilation after a change, the associated `toc' file is updated. And on second compilation after the change, the `Table of Contents' page is updated to reflect the change according to `toc' file.
+	\item[\textbackslash textit] Command to format text into italics font style.
+	\item[\textbackslash textbf] Command to format text into boldface font style. 
+	\item[\textbackslash \textbackslash] Command to insert a line break after some text.
+	%\item[\textbackslash textsl] Command to format text into slanted font style. 
+	%\item[\textbackslash textsc] Command to format text into smallcaps font style. 
 \end{description}
  \end{document}
