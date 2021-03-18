@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[inline,shortlabels]{enumitem}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Latex Certificate Course Instructions}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Mathematics}
+\LaTeX{} was original intended to write documents with mathematical content. And it has a special mode designated for mathematics called \textbf{math mode}. \LaTeX{} changes into or returns from math mode on each occurance of \$ symbol.
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+...
+\begin{document}
+...
+Let $x$ be an integer.\\
+Let x be an integer.
+...
+\end{document}
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+Let $x$ be an integer.\\
+Let x be an integer.
+\end{minipage} 
+\caption{math mode}
+\label{fig:mathmode}
+\end{figure}
+
+In figure \ref{fig:mathmode} at line 4, \LaTeX{} enters into math mode, prints $x$, then exits from math mode. But at line 5, \LaTeX{} prints x in text mode. It is better to write variable names and numbers in math mode.
+
+\subsection{Operators}
+Most of the symbols like $+,-,=,/,|$ are readily available in math mode. \LaTeX{} allows you to write complicated symbols and expressions using commands. The following are a few commonly used symbols,
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c||c|c|} \hline
+		Symbol & Command & Symbol & Command \\ \hline
+		$\in$ & \textbackslash in & $\notin$ & \textbackslash notin \\ \hline
+		$\ne$ & \textbackslash ne & $\to$ & \textbackslash to \\ \hline
+		$\geq$ & \textbackslash geq & $\leq$ & \textbackslash leq \\ \hline
+		$\subset$ & \textbackslash subset & $\times$ & \textbackslash times \\ \hline
+		$\exists$ & \textbackslash exists & $\forall$ & \textbackslash forall \\ \hline
+		$\cap$ & \textbackslash cap & $\cup$ & \textbackslash cup \\ \hline
+	\end{tabular}
+	\caption{Basic Symbols}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+...
+\begin{document}
+...
+$ 3 + 4 \times 5 = 23$\\
+$ A \subset A \cup B$\\
+Let $ f : X \to Y$
+...
+\end{document}
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+$ 3 + 4 \times 5 = 23$\\
+$ A \subset A \cup B$\\
+Let $ f : X \to Y$
+\end{minipage} 
+\caption{Basic Expressions}
+\label{fig:basicmath}
+\end{figure}
+
+\subsubsection{Superscript and Subscript}
+In math mode, \textasciicircum and \_ are used for writing superscripts and subscripts respectively. Exponents are also written using superscripts. For example, $a^2+b_3$ is written as \$ a\textasciicircum 2 + b \_ 3 \$. Again, $1^{st}$ May is written as \$1\textasciicircum \{st\}\$ May.
+
+\subsection{Greek Letters}
+
+\end{document}
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+...
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+...
+\end{minipage} 
+\caption{Nesting enumerate inside itemize}
+\label{fig:nestedEnvironment}
+\end{figure}
+
+\subsection{Cross-referencing}
+Suppose you want to refer to an image/table in the same document on a different page. \LaTeX{} does have provisions for references. You are not yet there. You should mention page number explicitly as the page numbers might change as your add/remove sentences. 

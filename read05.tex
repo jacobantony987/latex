@@ -1,0 +1,140 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[inline,shortlabels]{enumitem}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Latex Certificate Course Instructions}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{\LaTeX{} Packages}
+\LaTeX{} packages provides different mechanisms to ease the documentation process. There are hundreds of \LaTeX{} package written for different purposes. There is an online repository for \LaTeX{} packages and documentation called \href{https://ctan.org/pkg}{CTAN} (Comprehensive TeX Archive Network) where you could find most of the \LaTeX{} packages. The following are a few popular packages,
+\begin{description}
+	\item[fancyhdr] provides extensive control of page headers and footers
+	\item[geometry] controls the size of the document and other layout details
+	\item[graphicx] provides extra functionality for adding images
+	\item[hyperref] allows easier inclusion of hyperlinks
+	\item[multicol] allows multiple columns of text and
+	\item[tikz] allows to draw vector graphics
+\end{description}
+
+You may download packages from CTAN or from other websites. The \texttt{\textbackslash usepackage} command allows us to use packages that are installed on your computer. The \textbackslash usepackage commands for required packages are to be included in the preamble of your document. The lines after \textbackslash documentclass and before \textbackslash begin\{document\} are collectively known as the \textbf{preamble}. And any lines after \textbackslash end\{document\} are ignored.
+
+\begin{figure}[h]
+\centering
+\begin{Verbatim}[numbers = left]
+\documentclass{book}
+\usepackage{geometry}
+...
+\begin{document}
+...
+\end{Verbatim}
+\caption{Adding Packages}
+\end{figure}
+
+\subsection{geometry Package}
+	The \texttt{geometry} package is used for controlling the page dimensions and other layout parameters like margins. The current version of this package is 5.9 and is maintained by Davide Carlisle and Hideo Umeki. The documentation is available at \href{https://ctan.org/pkg/geometry}{CTAN} and \href{https://github.com/davidcarlisle/geometry}{Github}.
+
+\subsubsection{Setting Margins}
+	The margins can be specified using the optional arguments \texttt{top}, \texttt{bottom}, \texttt{left} and \texttt{right} of the \texttt{\textbackslash usepackage} command with \texttt{geometry} argument.
+
+\begin{figure}[h]
+\centering
+\begin{Verbatim}[numbers = left]
+\documentclass{book}
+\usepackage[top=1in,bottom=1.25in,left=1.25in,right=1.25in}{geometry}
+...
+\begin{document}
+...
+\end{Verbatim}
+\caption{Setting Margins}
+\label{fig:geometry}
+\end{figure}
+
+\subsubsection{Arguments and Optional Arguments}
+	\LaTeX{} commands may take arguments/optional arguments. \texttt{\textbackslash begin} are commands that take name of an environment as argument. In the same fashion, \texttt{\textbackslash usepackage} commands takes package names as arguments and for some packages it also accepts optional arguments as shown in figure \ref{fig:geometry} for \texttt{geometry} package.
+
+\subsection{fancyhdr Package}
+	The \texttt{fancyhdr} package is popular for setting page header and footers. The current version of this package is 4.0.1 and is maintained by Pieter van Oostrum. The documentation is available at \href{https://ctan.org/pkg/fancyhdr}{CTAN} and \href{https://github.com/pietvo/fancyhdr}{Github}.
+
+\subsubsection{\texttt{\textbackslash fancyhead} and \texttt{\textbackslash fancyfoot} commands}
+	The recent version uses \texttt{\textbackslash fancyhead} and \texttt{\textbackslash fancyfoot} commands for page headers and footers. \texttt{fancyhdr} has the following selectors for the page locators,
+\begin{table}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{description} 
+	\item[L] Left,
+	\item[R] Right,
+	\item[C] Center,
+\end{description}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{description} 
+	\item[O] Odd-numbered page, and
+	\item[E] Even-numbered page
+\end{description}
+\end{minipage}
+\caption{Page Locators for \texttt{fancyhdr}}
+\end{table}
+
+	For example, \texttt{fancyfoot[LE]\{Lie Algebra\}} applies the footer `Lie Algebra' on the bottom-left of almost\footnote{Page headers and footers are not added to opening pages of chapters.} every even-numbered pages.
+
+\begin{figure}[h]
+\centering
+\begin{Verbatim}[numbers = left]
+\documentclass{book}
+...
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+...
+\pagestyle{fancy}
+\fancyhead[LE,RO]{\rightmark}
+\fancyhead[RE,LO]{\leftmark}
+\fancyfoot[CE,CO]{\thepage}
+\fancyfoot[RE,LO]{\includegraphics{logo.png}}
+...
+\begin{document}
+...
+\end{Verbatim}
+\caption{fancyhdr Package}
+\label{fig:fancyhdr}
+\end{figure}
+
+The following are macros used in figure \ref{fig:fancyhdr},
+\begin{description}
+	\item[\textbackslash thepage] gives the page number
+	\item[\textbackslash leftmark] gives the number and name of the current top-level structure.\\ The number and name of the current section/subsection and
+	\item[\textbackslash rightmark] gives the number and name of the next top-level structure. The number and name of the current chapter/section.
+\end{description}
+
+\subsubsection{Short Titles}
+	The \texttt{\textbackslash chapter}, \texttt{\textbackslash section}, \texttt{\textbackslash subsection} and \texttt{\textbackslash subsubsection} commands supports \textbf{short titles} as an optional argument if the titles are too long for a page header/footer.
+	
+	For example, \texttt{\textbackslash chapter[Introduction]\{Introduction to Tritopological Spaces\}} will show up on page header/footer as 1. INTRODUCTION instead of 1. INTRODUCTION TO TRITOPOLOGICAL SPACES.
+
+\subsubsection{Package Documentation}
+	Our objective is only to introduce these package. And for more details and examples you should refer to the documentation available at CTAN. Also there are many websites/forums demonstrating different applications of popular packages.
+\end{document}
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+...
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+...
+\end{minipage} 
+\caption{Nesting enumerate inside itemize}
+\label{fig:nestedEnvironment}
+\end{figure}
+
+\subsection{Cross-referencing}
+Suppose you want to refer to an image/table in the same document on a different page. \LaTeX{} does have provisions for references. You are not yet there. You should mention page number explicitly as the page numbers might change as your add/remove sentences. 

@@ -1,0 +1,155 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[inline,shortlabels]{enumitem}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Latex Certificate Course Instructions}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{\LaTeX{} Envirnoment}
+Environments are mechanisms for managing repeated patterns in your document. The \texttt{\textbackslash begin} and \texttt{\textbackslash end} commands are reserved as \textbf{enviroment delimiters}. In other words, \texttt{\textbackslash begin\{enumerate\}} marks the beginning of an environment named `enumerate' and \texttt{\textbackslash end\{enumerate\}} marks the end of it. You are already familiar with an environment --- `document'.
+
+\subsection{List Environments}
+There are environments available for lists, tables, images, equations, matrices, theorems, etc. Major list environments in \LaTeX{} are
+\begin{enumerate*}
+	\item \texttt{itemize}
+	\item \texttt{enumerate} and
+	\item \texttt{description}
+\end{enumerate*}
+
+ \LaTeX{} makes use of another command \texttt{\textbackslash item} to identify different items on a list. Again, there are mechanisms to modify the type of bullets and the numbering schemes. Such details are discussed later.
+
+\subsubsection{Itemize Environment}
+The \textbf{itemize} is a list enviroment used for writing bulleted lists.
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\begin{itemize}
+	\item Cabbage
+	\item Sheep
+	\item Wolf
+\end{itemize}
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+	\item Cabbage
+	\item Sheep
+	\item Wolf
+\end{itemize}
+\end{minipage}
+\caption{itemize environment}
+\end{figure}
+
+\subsubsection{Enumerate Environment}
+The \textbf{enumerate} is a list enviroment used for writing numbered lists. Since enumerate environments are independent of one another, the item number is reset to 1 at the beginning of each enumerate environment.
+%start with first item numbered as 1(arabic), a(alphabetic) or i(roman) at different levels.
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\begin{enumerate}
+	\item Cabbage
+	\item Sheep
+	\item Wolf
+\end{enumerate}
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{enumerate}
+	\item Cabbage
+	\item Sheep
+	\item Wolf
+\end{enumerate}
+\end{minipage}
+\caption{enumerate environment}
+\end{figure}
+
+You can easily switch between itemize and enumerate environments by changing the environment delimiters. Also you don't have to worry about changing the numbers, when rearranging the items on an enumerate list as the numbering is automatically done by \LaTeX{}.
+
+\subsubsection{Description Environment}
+The \textbf{description} is a list enviroment used for writing definition lists. \LaTeX{} writes definition lists in a different style compared to other list enviroments to suit its purpose.
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\begin{description}
+	\item[C] Cabbage
+	\item[S] Sheep
+	\item[W] Wolf
+\end{description}
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{description}
+	\item[C] Cabbage
+	\item[S] Sheep
+	\item[W] Wolf
+\end{description}
+\end{minipage}
+\caption{description environment}
+\end{figure}
+
+\subsection{An Environment inside another}
+We often require a list inside another for our document. \LaTeX{} allows you to write a list inside another. And \LaTeX{} has a set of bullets and numbering schemes for lists at different depth.
+
+The \textbf{depth} of a list environment is the number of list environments containing it plus one. The maximum list depth allowed in \LaTeX{} is 9. In figure \ref{fig:nestedEnvironment}, two enumerate environments are nested inside an itemize environment. The enumerate environments are at depth 2 and itemize environment is at depth 1.
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\begin{itemize}
+\item Applied Mathematics
+\begin{enumerate}
+	\item Linear Programming
+	\item Combinatorics
+	\item Numerical Analysis
+	\item Game Theory
+\end{enumerate}
+\end{itemize}
+\item Pure Mathematics
+\begin{enumerate}
+	\item Abstract Algebra
+	\item Topology
+	\item Calculus
+	\item Statistics
+\end{enumerate}
+\end{itemize}
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+	\item Applied Mathematics
+	\begin{enumerate}
+		\item Linear Programming
+		\item Combinatorics
+		\item Numerical Analysis
+		\item Game Theory
+	\end{enumerate}
+	\item Pure Mathematics
+	\begin{enumerate}
+		\item Abstract Algebra
+		\item Topology
+		\item Calculus
+		\item Statistics
+	\end{enumerate}
+\end{itemize}
+\end{minipage} 
+\caption{Nesting enumerate inside itemize}
+\label{fig:nestedEnvironment}
+\end{figure}
+
+\subsubsection{Delimiter Mismatch Error}
+Using an environment inside another is called \textbf{nesting} of environments. When you are using nested environments, it is quite important that you end an inner environment before ending an outer environment.Current version of \LaTeX{} won't tolerate a mismatch of environment delimiters. Forgetting to end an environment will be reported as \textbf{missing environment delimiter error} as \texttt{\textbackslash end\{document\}} at the end of the file will look like an environment delimiter mismatch.
+
+The same way, \LaTeX{} uses braces, \{ and \} as \textbf{block delimiters}. Any material inside a pair of braces, is called a \textbf{block}. And the mismatch of block delimiters also causes an error. Forgetting \} after \texttt{\{} also causes an error called \textbf{missing block delimiter error}.
+
+\end{document}

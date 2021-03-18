@@ -9,9 +9,9 @@ Day 02 Comments, Commands, Sections
 
 Day 03 Text formatting, Line break, Table of Contents
 
-Day 04 Environments, List environments
+Day 04 Environments, List environments, Nesting of Environments
 
-Day 05 Packages : enumitem, fancyhdr, geometry
+Day 05 Packages : fancyhdr, geometry, Optional arguments
 
 # Module 2
 
