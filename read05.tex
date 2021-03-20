@@ -24,7 +24,7 @@
 	\item[tikz] allows to draw vector graphics
 \end{description}
 
-You may download packages from CTAN or from other websites. The \texttt{\textbackslash usepackage} command allows us to use packages that are installed on your computer. The \textbackslash usepackage commands for required packages are to be included in the preamble of your document. The lines after \textbackslash documentclass and before \textbackslash begin\{document\} are collectively known as the \textbf{preamble}. And any lines after \textbackslash end\{document\} are ignored.
+You may download packages from CTAN or from other websites. The \texttt{\textbackslash usepackage} command allows us to use packages that are installed on your computer. The \textbackslash usepackage commands for required packages are to be included in the preamble of your document. The lines before \textbackslash begin\{document\} are collectively known as the \textbf{preamble}. And any lines after \textbackslash end\{document\} are ignored.
 
 \begin{figure}[h]
 \centering
@@ -60,6 +60,8 @@ You may download packages from CTAN or from other websites. The \texttt{\textbac
 \subsubsection{Arguments and Optional Arguments}
 	\LaTeX{} commands may take arguments/optional arguments. \texttt{\textbackslash begin} are commands that take name of an environment as argument. In the same fashion, \texttt{\textbackslash usepackage} commands takes package names as arguments and for some packages it also accepts optional arguments as shown in figure \ref{fig:geometry} for \texttt{geometry} package.
 
+	In figure \ref{fig:geometry}, \texttt{\textbackslash usepackage\{geometry\}} has four optional arguments : top, bottom, left and right. They represent margins on top, bottom, left and right of the document. And \texttt{1.25in} stands for $1.25$ inches. Other than inches, you may use mm, cm, pt, em, or ex.
+
 \subsection{fancyhdr Package}
 	The \texttt{fancyhdr} package is popular for setting page header and footers. The current version of this package is 4.0.1 and is maintained by Pieter van Oostrum. The documentation is available at \href{https://ctan.org/pkg/fancyhdr}{CTAN} and \href{https://github.com/pietvo/fancyhdr}{Github}.
 
@@ -89,7 +91,6 @@ You may download packages from CTAN or from other websites. The \texttt{\textbac
 \centering
 \begin{Verbatim}[numbers = left]
 \documentclass{book}
-...
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 ...
@@ -98,15 +99,14 @@ You may download packages from CTAN or from other websites. The \texttt{\textbac
 \fancyhead[RE,LO]{\leftmark}
 \fancyfoot[CE,CO]{\thepage}
 \fancyfoot[RE,LO]{\includegraphics{logo.png}}
-...
 \begin{document}
-...
 \end{Verbatim}
 \caption{fancyhdr Package}
 \label{fig:fancyhdr}
 \end{figure}
 
-The following are macros used in figure \ref{fig:fancyhdr},
+\subsubsection{Macros for fancyhdr}
+The following are the macros used in figure \ref{fig:fancyhdr},
 \begin{description}
 	\item[\textbackslash thepage] gives the page number
 	\item[\textbackslash leftmark] gives the number and name of the current top-level structure.\\ The number and name of the current section/subsection and

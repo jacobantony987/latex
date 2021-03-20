@@ -1,29 +1,28 @@
 # latex
-Material for Latex Certificate Course for M.Sc. Mathematics Students
-
+    Papeeria Material for Latex Certificate Course
+    for M.Sc. Mathematics Students, KE College, Mannanam
 # Module 1
 
-Day 01 papeeria, LaTeX 
+Day 01 LaTeX, Papeeria
 
 Day 02 Comments, Commands, Sections
 
 Day 03 Text formatting, Line break, Table of Contents
 
-Day 04 Environments, List environments, Nesting of Environments
-
+Day 04 Environments, List environments, Nested Environments, Delimiters
 Day 05 Packages : fancyhdr, geometry, Optional arguments
 
 # Module 2
 
-Day 06 Basic Mathematics : operators, greek letters
+Day 06 Basic Mathematics : operators, greek letters, Math mode
 
-Day 07 Math mode, fonts, commands, environments : equation,matrix
+Day 07 frac, Spacing, Equations, Environments : equation,matrix
 
-Day 08 AMS environments, Theorem and proof
+Day 08 AMS Pakcages : Theorem and proof
 
 # Module 3
 
-Day 09 reference, environments : tabular, figure
+Day 09 Reference, Environments : tabular, figure
 
 Day 10 bibliography : cite, bibtex
 

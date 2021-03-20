@@ -14,18 +14,14 @@
 \maketitle
 
 \section{Mathematics}
-\LaTeX{} was original intended to write documents with mathematical content. And it has a special mode designated for mathematics called \textbf{math mode}. \LaTeX{} changes into or returns from math mode on each occurance of \$ symbol.
+\LaTeX{} has a special mode for mathematics called \textbf{math mode}. \LaTeX{} changes into or returns from math mode on each occurance of dollar, \$ symbols.
 
 \begin{figure}[h]
 \centering
 \begin{minipage}{0.45\textwidth}
 \begin{Verbatim}[numbers = left]
-...
-\begin{document}
-...
 Let $x$ be an integer.\\
 Let x be an integer.
-...
 \end{document}
 \end{Verbatim}
 \end{minipage}
@@ -37,40 +33,43 @@ Let x be an integer.
 \label{fig:mathmode}
 \end{figure}
 
-In figure \ref{fig:mathmode} at line 4, \LaTeX{} enters into math mode, prints $x$, then exits from math mode. But at line 5, \LaTeX{} prints x in text mode. It is better to write variable names and numbers in math mode.
+In figure \ref{fig:mathmode} at line 1, \LaTeX{} prints \texttt{Let}, enters into math mode, prints $x$, exits from math mode and prints \texttt{be an integer}. But at line 2, \LaTeX{} prints everything in text mode. You might think that the difference in output isn't much. But, it is better to write variable names and numbers in math mode for readability of the document. And math mode supports complicated mathematical expressions as well.
 
-\subsection{Operators}
-Most of the symbols like $+,-,=,/,|$ are readily available in math mode. \LaTeX{} allows you to write complicated symbols and expressions using commands. The following are a few commonly used symbols,
+\subsubsection{Superscript and Subscript}
+In math mode, characters caret \textasciicircum and underscore \_ are used for writing superscripts and subscripts respectively. Exponents are also written using superscripts. For example, $a^2+b_3$ is written as \$ a\textasciicircum 2 + b \_ 3 \$.
+
+When the superscript/subscript is not a single character/digit, then \LaTeX{} blocks should be used. For example, \$2\textasciicircum\{10\}\$ and \$2\textasciicircum 10\$ gives $2^{10}$ and $2^10$ respectively.
+
+Writing multilevel superscript/subscript without using blocks will throw an error as \LaTeX{} can't predict the priority. When you are using multilevel superscript/subscript, then the superscript/subscript at next level should be in written in a subblock. For example, \$a\_\{b\_\{c\_d\}\}\$ and \$\{\{a\_b\}\_c\}\_d\$(${a_b}_c$) gives $a_{b_{c_d}}$ and ${{a_b}_c}_d$ respectively. Clearly, the first looks better than the second. 
+
+\section{Operators}
+Most of the symbols like $+,-,=$ are readily available in math mode. \LaTeX{} allows you to write complicated symbols and expressions using commands. The following are a few commonly used symbols,
 \begin{table}[h]
-	\centering
-	\begin{tabular}{|c|c||c|c|} \hline
-		Symbol & Command & Symbol & Command \\ \hline
-		$\in$ & \textbackslash in & $\notin$ & \textbackslash notin \\ \hline
-		$\ne$ & \textbackslash ne & $\to$ & \textbackslash to \\ \hline
-		$\geq$ & \textbackslash geq & $\leq$ & \textbackslash leq \\ \hline
-		$\subset$ & \textbackslash subset & $\times$ & \textbackslash times \\ \hline
-		$\exists$ & \textbackslash exists & $\forall$ & \textbackslash forall \\ \hline
-		$\cap$ & \textbackslash cap & $\cup$ & \textbackslash cup \\ \hline
-	\end{tabular}
-	\caption{Basic Symbols}
+\centering
+\begin{tabular}{|c|c||c|c||c|c|} \hline
+	Symbol & Command & Symbol & Command & Symbol & Command \\ \hline
+	$\in$ & \textbackslash in & $\notin$ & \textbackslash notin & $\ne$ & \textbackslash ne \\ \hline
+	$\to$ & \textbackslash to & $\geq$ & \textbackslash geq & $\leq$ & \textbackslash leq \\ \hline
+	$\subset$ & \textbackslash subset & $\times$ & \textbackslash times & $\exists$ & \textbackslash exists \\ \hline
+	$\forall$ & \textbackslash forall & $\cap$ & \textbackslash cap & $\cup$ & \textbackslash cup \\ \hline
+\end{tabular}
+\caption{Basic Symbols}
 \end{table}
+
+\subsection{Basic Expressions}
+When you are writing, your content might need some mathematical symbols occasionally. You will have to use dollars \$ for each occurance. But, for writing mathematical expressions you don't have to add dollars \$ for each symbol. You can enter into math mode, write mathematical content and then return to text mode.
 
 \begin{figure}[h]
 \centering
 \begin{minipage}{0.45\textwidth}
 \begin{Verbatim}[numbers = left]
-...
-\begin{document}
-...
-$ 3 + 4 \times 5 = 23$\\
+$ 2x_n^2 + 1 = y_n^2$\\
 $ A \subset A \cup B$\\
 Let $ f : X \to Y$
-...
-\end{document}
 \end{Verbatim}
 \end{minipage}
 \begin{minipage}{0.45\textwidth}
-$ 3 + 4 \times 5 = 23$\\
+$ 2x_n^2 + 1 = y_n^2$\\
 $ A \subset A \cup B$\\
 Let $ f : X \to Y$
 \end{minipage} 
@@ -78,26 +77,87 @@ Let $ f : X \to Y$
 \label{fig:basicmath}
 \end{figure}
 
-\subsubsection{Superscript and Subscript}
-In math mode, \textasciicircum and \_ are used for writing superscripts and subscripts respectively. Exponents are also written using superscripts. For example, $a^2+b_3$ is written as \$ a\textasciicircum 2 + b \_ 3 \$. Again, $1^{st}$ May is written as \$1\textasciicircum \{st\}\$ May.
+At first, you might find it hard to remember these commands. But, aftering practise \LaTeX{} for a month, you will realise that you have to remember only a handful of commands.
 
-\subsection{Greek Letters}
+\section{Greek Letters}
+In mathematics, we often use greek alphabets. \LaTeX{} math mode has commands for each greek alphabet. For example, \$\textbackslash alpha\$ gives $\alpha$.
 
-\end{document}
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c||c|c||c|c|} \hline
+	Alphabet & Command & Alphabet & Command & Alphabet & Command \\ \hline
+	$\alpha$ & \textbackslash alpha & $\beta$ & \textbackslash beta & $\gamma$ & \textbackslash gamma \\ \hline
+	$\delta$ & \textbackslash delta & $\epsilon$ & \textbackslash epsilon & $\zeta$ & \textbackslash zeta \\ \hline
+	$\eta$ & \textbackslash eta & $\theta$ & \textbackslash theta & $\iota$ & \textbackslash iota \\ \hline
+	$\kappa$ & \textbackslash kappa & $\lambda$ & \textbackslash lambda & $\mu$ & \textbackslash mu \\ \hline
+	$\nu$ & \textbackslash nu & $\xi$ & \textbackslash xi & $\o$ & \textbackslash o \\ \hline
+	$\pi$ & \textbackslash pi & $\rho$ & \textbackslash rho & $\sigma$ & \textbackslash sigma \\ \hline
+	$\tau$ & \textbackslash tau & $\upsilon$ & \textbackslash upsilon & $\phi$ & \textbackslash phi \\ \hline
+	$\chi$ & \textbackslash chi & $\psi$ & \textbackslash psi & $\omega$ & \textbackslash omega \\ \hline
+\end{tabular}
+\caption{Greek Alphabets}
+\label{tb:greek}
+\end{table}
+
+You might be wondering how to print $\Gamma, \Delta, \Phi, \cdots$. The uppercase variants of greek alphabets are also available. And it is not hard to remember the commands.
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c||c|c||c|c|} \hline
+	Alphabet & Command & Alphabet & Command & Alphabet & Command \\ \hline
+	$\Gamma$ & \textbackslash Gamma & $\Delta$ & \textbackslash Delta & $\Theta$ & \textbackslash Theta \\ \hline
+	$\Lambda$ & \textbackslash Lambda & $\Sigma$ & \textbackslash Sigma & $\Psi$ & \textbackslash Psi \\ \hline
+	$\Xi$ & \textbackslash Xi & $\Pi$ & \textbackslash Pi & $\Upsilon$ & \textbackslash Upsilon \\ \hline
+	$\O$ & \textbackslash O & $\Phi$ & \textbackslash Phi & $\Omega$ & \textbackslash Omega \\ \hline
+\end{tabular}
+\caption{Greek Alphabets in Uppercase}
+\label{tb:greekupper}
+\end{table}
+
+\section{Other Symbols}
+Other than greek letters are there are many symbols used in mathematics for different operators which includes $\nabla$ and $\wp$.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c||c|c||c|c|}\hline
+	Symbol & Command & Symbol & Command & Symbol & Command \\ \hline
+	$\oplus$ & \textbackslash oplus & $\partial$ & \textbackslash partial & $\nabla$ & \textbackslash nabla \\ \hline
+	$\vee$ & \textbackslash vee & $\wedge$ & \textbackslash wedge & $\ast$ & \textbackslash ast \\ \hline
+	$\Re$ & \textbackslash Re & $\Im$ & \textbackslash Im & $\aleph$ & \textbackslash aleph \\ \hline
+	$\infty$ & \textbackslash infty & $\cdot$ & \textbackslash cdot & $\circ$ & \textbackslash circ \\ \hline
+	$\ddots$ & \textbackslash ddots & $\cdots$ & \textbackslash cdots & $\vdots$ & \textbackslash vdots \\ \hline
+	$\wp$ & \textbackslash wp & $\int$ & \textbackslash int & $\star$ & \textbackslash star \\ \hline
+\end{tabular}
+\caption{Other Symbols}
+\end{table}
+
+\section{Bringing it all together}
+The mathematical contents will look a bit different from text. However, the document remains beautiful. In \LaTeX{} documents the mathematical contents flows along with the text. This is not by accident. \LaTeX{} uses advanced algorithms to generate beautiful document.
+% Another advantage of \LaTeX{} is its consistency. You will get the \textit{same} output on any computer.
 
 \begin{figure}[h]
 \centering
 \begin{minipage}{0.45\textwidth}
 \begin{Verbatim}[numbers = left]
-...
+Let $x \in X$.
+Then $\forall y \in Y$.
+The function
+$\psi : X \times Y \to X$
+defined by $\psi(x,y) =
+\int_0^{2\pi} x dy$
+is well-defined.
 \end{Verbatim}
 \end{minipage}
 \begin{minipage}{0.45\textwidth}
-...
+Let $x \in X$.
+Then $\forall y \in Y$.
+The function
+$\psi : X \times Y \to X$
+defined by $\psi(x,y) =
+\int_0^{2\pi} x dy$
+is well-defined.
 \end{minipage} 
-\caption{Nesting enumerate inside itemize}
-\label{fig:nestedEnvironment}
+\caption{Writing mathematics}
+\label{fig:writeMath}
 \end{figure}
 
-\subsection{Cross-referencing}
-Suppose you want to refer to an image/table in the same document on a different page. \LaTeX{} does have provisions for references. You are not yet there. You should mention page number explicitly as the page numbers might change as your add/remove sentences. 
+\end{document}
