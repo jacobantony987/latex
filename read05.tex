@@ -14,7 +14,8 @@
 \maketitle
 
 \section{\LaTeX{} Packages}
-\LaTeX{} packages provides different mechanisms to ease the documentation process. There are hundreds of \LaTeX{} package written for different purposes. There is an online repository for \LaTeX{} packages and documentation called \href{https://ctan.org/pkg}{CTAN} (Comprehensive TeX Archive Network) where you could find most of the \LaTeX{} packages. The following are a few popular packages,
+	\LaTeX{} packages provides different mechanisms to ease the documentation process. There are hundreds of \LaTeX{} package written for different purposes. There is an online repository for \LaTeX{} packages and documentation called \href{https://ctan.org/pkg}{CTAN} (Comprehensive TeX Archive Network) where you could find most of the \LaTeX{} packages. The following are a few popular packages,
+
 \begin{description}
 	\item[fancyhdr] provides extensive control of page headers and footers
 	\item[geometry] controls the size of the document and other layout details
@@ -24,7 +25,7 @@
 	\item[tikz] allows to draw vector graphics
 \end{description}
 
-You may download packages from CTAN or from other websites. The \texttt{\textbackslash usepackage} command allows us to use packages that are installed on your computer. The \textbackslash usepackage commands for required packages are to be included in the preamble of your document. The lines before \textbackslash begin\{document\} are collectively known as the \textbf{preamble}. And any lines after \textbackslash end\{document\} are ignored.
+	You may download packages from CTAN or from other websites. The \texttt{\textbackslash usepackage} command allows us to use packages that are installed on your computer. The \textbackslash usepackage commands for required packages are to be included in the preamble of your document. The lines before \textbackslash begin\{document\} are collectively known as the \textbf{preamble}. And any lines after \textbackslash end\{document\} are ignored.
 
 \begin{figure}[h]
 \centering
@@ -107,6 +108,7 @@ You may download packages from CTAN or from other websites. The \texttt{\textbac
 
 \subsubsection{Macros for fancyhdr}
 The following are the macros used in figure \ref{fig:fancyhdr},
+
 \begin{description}
 	\item[\textbackslash thepage] gives the page number
 	\item[\textbackslash leftmark] gives the number and name of the current top-level structure.\\ The number and name of the current section/subsection and
@@ -120,21 +122,5 @@ The following are the macros used in figure \ref{fig:fancyhdr},
 
 \subsubsection{Package Documentation}
 	Our objective is only to introduce these package. And for more details and examples you should refer to the documentation available at CTAN. Also there are many websites/forums demonstrating different applications of popular packages.
+
 \end{document}
-
-\begin{figure}[h]
-\centering
-\begin{minipage}{0.45\textwidth}
-\begin{Verbatim}[numbers = left]
-...
-\end{Verbatim}
-\end{minipage}
-\begin{minipage}{0.45\textwidth}
-...
-\end{minipage} 
-\caption{Nesting enumerate inside itemize}
-\label{fig:nestedEnvironment}
-\end{figure}
-
-\subsection{Cross-referencing}
-Suppose you want to refer to an image/table in the same document on a different page. \LaTeX{} does have provisions for references. You are not yet there. You should mention page number explicitly as the page numbers might change as your add/remove sentences. 

@@ -14,7 +14,7 @@
 \maketitle
 
 \section{Mathematics}
-\LaTeX{} has a special mode for mathematics called \textbf{math mode}. \LaTeX{} changes into or returns from math mode on each occurance of dollar, \$ symbols.
+	\LaTeX{} has a special mode for mathematics called \textbf{math mode}. \LaTeX{} changes into or returns from math mode on each occurance of dollar, \$ symbols.
 
 \begin{figure}[h]
 \centering
@@ -36,11 +36,12 @@ Let x be an integer.
 In figure \ref{fig:mathmode} at line 1, \LaTeX{} prints \texttt{Let}, enters into math mode, prints $x$, exits from math mode and prints \texttt{be an integer}. But at line 2, \LaTeX{} prints everything in text mode. You might think that the difference in output isn't much. But, it is better to write variable names and numbers in math mode for readability of the document. And math mode supports complicated mathematical expressions as well.
 
 \subsubsection{Superscript and Subscript}
-In math mode, characters caret \textasciicircum and underscore \_ are used for writing superscripts and subscripts respectively. Exponents are also written using superscripts. For example, $a^2+b_3$ is written as \$ a\textasciicircum 2 + b \_ 3 \$.
+	In math mode, characters caret \textasciicircum and underscore \_ are used for writing superscripts and subscripts respectively. Exponents are also written using superscripts. For example, $a^2+b_3$ is written as \$ a\textasciicircum 2 + b \_ 3 \$.
 
-When the superscript/subscript is not a single character/digit, then \LaTeX{} blocks should be used. For example, \$2\textasciicircum\{10\}\$ and \$2\textasciicircum 10\$ gives $2^{10}$ and $2^10$ respectively.
+\paragraph{Warning :}
+	When the superscript/subscript is not a single character/digit, then \LaTeX{} blocks should be used. For example, \$2\textasciicircum\{10\}\$ and \$2\textasciicircum 10\$ gives $2^{10}$ and $2^10$ respectively.
 
-Writing multilevel superscript/subscript without using blocks will throw an error as \LaTeX{} can't predict the priority. When you are using multilevel superscript/subscript, then the superscript/subscript at next level should be in written in a subblock. For example, \$a\_\{b\_\{c\_d\}\}\$ and \$\{\{a\_b\}\_c\}\_d\$(${a_b}_c$) gives $a_{b_{c_d}}$ and ${{a_b}_c}_d$ respectively. Clearly, the first looks better than the second. 
+	Writing multilevel superscript/subscript without using blocks will throw an error as \LaTeX{} can't predict the priority. When you are using multilevel superscript/subscript, then the superscript/subscript at next level should be in written in a subblock. For example, \$a\_\{b\_\{c\_d\}\}\$ and \$\{\{a\_b\}\_c\}\_d\$(${a_b}_c$) gives $a_{b_{c_d}}$ and ${{a_b}_c}_d$ respectively. Clearly, the first looks better than the second. 
 
 \section{Operators}
 Most of the symbols like $+,-,=$ are readily available in math mode. \LaTeX{} allows you to write complicated symbols and expressions using commands. The following are a few commonly used symbols,
@@ -57,7 +58,7 @@ Most of the symbols like $+,-,=$ are readily available in math mode. \LaTeX{} al
 \end{table}
 
 \subsection{Basic Expressions}
-When you are writing, your content might need some mathematical symbols occasionally. You will have to use dollars \$ for each occurance. But, for writing mathematical expressions you don't have to add dollars \$ for each symbol. You can enter into math mode, write mathematical content and then return to text mode.
+	When you are writing, your content might need some mathematical symbols occasionally. You will have to use dollars \$ for each occurance. But, for writing mathematical expressions you don't have to add dollars \$ for each symbol. You can enter into math mode, write mathematical content and then return to text mode.
 
 \begin{figure}[h]
 \centering
@@ -77,10 +78,10 @@ Let $ f : X \to Y$
 \label{fig:basicmath}
 \end{figure}
 
-At first, you might find it hard to remember these commands. But, aftering practise \LaTeX{} for a month, you will realise that you have to remember only a handful of commands.
+	At first, you might find it hard to remember these commands. But, aftering practise \LaTeX{} for a month, you will realise that you have to remember only a handful of commands.
 
 \section{Greek Letters}
-In mathematics, we often use greek alphabets. \LaTeX{} math mode has commands for each greek alphabet. For example, \$\textbackslash alpha\$ gives $\alpha$.
+	In mathematics, we often use greek alphabets. \LaTeX{} math mode has commands for each greek alphabet. For example, \$\textbackslash alpha\$ gives $\alpha$.
 
 \begin{table}[h]
 \centering
@@ -99,7 +100,8 @@ In mathematics, we often use greek alphabets. \LaTeX{} math mode has commands fo
 \label{tb:greek}
 \end{table}
 
-You might be wondering how to print $\Gamma, \Delta, \Phi, \cdots$. The uppercase variants of greek alphabets are also available. And it is not hard to remember the commands.
+	You might be wondering how to print $\Gamma, \Delta, \Phi, \cdots$. The uppercase variants of greek alphabets are also available. And it is not hard to remember the commands.
+
 \begin{table}[h]
 \centering
 \begin{tabular}{|c|c||c|c||c|c|} \hline
@@ -114,7 +116,7 @@ You might be wondering how to print $\Gamma, \Delta, \Phi, \cdots$. The uppercas
 \end{table}
 
 \section{Other Symbols}
-Other than greek letters are there are many symbols used in mathematics for different operators which includes $\nabla$ and $\wp$.
+	Other than greek letters are there are many symbols used in mathematics for different operators which includes $\nabla$ and $\wp$.
 
 \begin{table}[h]
 \centering
@@ -131,7 +133,8 @@ Other than greek letters are there are many symbols used in mathematics for diff
 \end{table}
 
 \section{Bringing it all together}
-The mathematical contents will look a bit different from text. However, the document remains beautiful. In \LaTeX{} documents the mathematical contents flows along with the text. This is not by accident. \LaTeX{} uses advanced algorithms to generate beautiful document.
+	The mathematical contents will look a bit different from text. However, the document remains beautiful. In \LaTeX{} documents the mathematical contents flows along with the text. This is not by accident. \LaTeX{} uses advanced algorithms to generate beautiful document.
+
 % Another advantage of \LaTeX{} is its consistency. You will get the \textit{same} output on any computer.
 
 \begin{figure}[h]

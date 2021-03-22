@@ -36,6 +36,7 @@ Errors are the most difficult part for a beginner. Even with error reports, it i
 
 The word following backslash is supposed to be a LaTeX command. If the command is already known, then LaTeX will take the necessary action. And if a command is not defined, \LaTeX{} will fail to do anything further and will return an error message.\\
 
+\paragraph{Warning :}
 Another important thing is the begin and end commands with `document' argument. Your document content should be between those two lines. Anything before `begin-document' or after `end-document'are not printed.
 
 Another trick is to compile after commenting off suspicious lines by adding a percentage (\%) symbol to them. Once the compilation is successful, you may enable lines one by one till you get an error report. Then you could be sure about that line causing the problem.
@@ -48,9 +49,6 @@ Once again, it is a difficult thing for beginners to remember commands. But, the
 
 \subsection*{Special symbols}
 LaTeX won't accept certain symbols. For example, \% symbol. \LaTeX{} comment lines starts with percentage (\%) symbol. Thus, everything on the line after \% is treated as a comment. If you want to print `15\% discount', then you will have to write `15\textbackslash\% discount'.A few more symbols follows the same logic -- \$, \&, \}, \{, \_
-
-% If brackets, \{ , \} are not properly paired, then \LaTeX{} will give an error.
-% If \textbackslash begin\{\dots\}  and \textbackslash end\{ \dots \} are not properly paired, then \LaTeX{} will give an error.
 
 \section{Important Websites}
 \begin{enumerate}

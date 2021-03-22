@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 \usepackage[inline,shortlabels]{enumitem}
 \usepackage{fancyvrb}
 \usepackage{graphicx}
@@ -13,8 +14,157 @@
 
 \maketitle
 
-\section{AMS Packages}
-The \texttt{amsmath} package from American Mathematical Society have environments for writing equations, and matrices. It also provides commands for different types of dots, arrows, fractions, and congruences. There are commands for delimiters and operators of different sizes. Also it provides mechanisms for multiline superscripts/subscripts and a completely new class of operators.And it provides boldface mathematics and italic greek letters.
+\section{amsmath Package}
+	The \texttt{amsmath} package is used for mathematics commands and environments for writing equations, matrices, \dots. The current version of this package is 2.17i and is maintained by \LaTeX3{} Team. The documentation is available at \href{https://ctan.org/pkg/amsmath}{CTAN}.
+	
+	The \texttt{amsmath} package from American Mathematical Society have environments for writing equations, and matrices. It also provides commands for different types of dots, arrows, fractions, and congruences. There are commands for delimiters and operators of different sizes. Also it provides mechanisms for multiline superscripts/subscripts and a completely new class of operators. And it provides boldface mathematics and italic greek letters.
+
+\subsection{Writing Fractions}
+	The \texttt{amsmath} package provides the \texttt{\textbackslash frac} command for writing fractions. This command take two arguments where first argument in the numerator and second the denominator of the fraction. For example, \$\textbackslash frac\{1\}\{2\}\$ gives $\frac{1}{2}$.
+
+\subsection{Commands with Multiple Arguments}
+	 Usually, \LaTeX{} commands have one or two arguments and many optional arguments. Thus, \LaTeX{} uses a pair of braces \{ \} for each argument of a command. If there is a command \texttt{\textbackslash many} which takes 4 arguments, then the command will looks like \texttt{\textbackslash many\{\dots\}\{\dots\}\{\dots\}\{\dots\}}. However, it uses only a pair of brackets [ ] for optional arguments. Instead of using multiple brackets, \LaTeX{} gives different names to optional arguments as we have seen in the case of \texttt{geometry} package which has many optional arguments. \texttt{top, bottom, left} and \texttt{right} are only a few among them.
+
+\subsection{A few more Commands}
+The \text{amsmath} package also provides the following commands,
+\begin{description}
+	\item[sqrt] to write surds.\\
+	For example, \$\textbackslash sqrt[3]\{x\}\$ gives $\sqrt[3]{x}$.
+	\item[binom] to write binomial coefficients.\\
+	For example, \$\textbackslash binom\{n\}\{r\}\$ gives $\binom{n}{r}$.
+\end{description}
+
+\section{Writing equations}
+	The \texttt{amsmath} package has \texttt{equation} environment for writing equations.
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\usepackage{amsmath}
+...
+\begin{document}
+...
+\begin{equation}
+e^{i\pi} + 1 = 0
+\end{equation}
+...
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{equation}
+e^{i\pi} + 1 = 0
+\end{equation}
+\end{minipage} 
+\caption{Writing equations}
+\label{fig:equation}
+\end{figure}
+
+	The \texttt{equation} environment not only prints the equation in a separate line, but also prints the equation number. This number is automatically updated by \LaTeX{}. If you want to print an equation, but don't want to give any number to it. Then you should use \texttt{equation*} environment.
+	
+\paragraph{Warning:}
+	When you are using \texttt{equation} environment, it will automatically switch into math mode. Thus, you should not use math mode explicitly. For example, \$\textbackslash begin\{equation\}x = 1\textbackslash end\{equation\}\$ won't work.
+
+	Also whenever you switch between \texttt{equation} and \texttt{equation*} or \texttt{itemize} and \texttt{enumerate}. You should change both \texttt{\textbackslash begin} and \texttt{\textbackslash end} commands. First you should update both the environment delimiters, and then think about its contents.
+
+\subsubsection{Adding text into equations}
+	\LaTeX{} has a different mechanism for adding text inside math mode. This mechanism is useful in adding text into equations written using \texttt{equation}.
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\begin{equation}
+f \circ g(\bar{x}) = f(y)
+\text{ where }
+g(\bar{x}) = y
+\end{equation}
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{equation}
+f \circ g(\bar{x}) = f(y)
+\text{ where }
+g(\bar{x}) = y
+\end{equation}
+\end{minipage} 
+\caption{Adding text in Equations}
+\label{fig:textAndEquation}
+\end{figure}
+
+\subsubsection{Adding spaces in equations}
+	The \texttt{\textbackslash } command is used to adding a blank space in math mode. There is a blank space following the \textbackslash{} symbol. For example, $(1 2)(3 4)$ and $(1\ 2)(3\ 4)$ looks slightly different. You will have to write \$(1\textbackslash{} 2)(3\textbackslash{} 4)\$ to obtain the latter.
+
+	If you want to add more spaces, there are a few commands \texttt{\textbackslash,}, \texttt{\textbackslash:}, \texttt{\textbackslash;}, \texttt{\textbackslash quad}, and \texttt{\textbackslash qquad}. Also sometimes you might feel that that the spacing is too much for your purpose. \LaTeX{} has \texttt{\textbackslash!} command for negative spacing in your expressions.
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\begin{equation}
+a_n = \int_0^{2\pi}\!\!\!
+f(x)\overline{\phi_n(x)}\ dx
+\end{equation}
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{equation}
+a_n = \int_0^{2\pi}\!\!\! f(x)\overline{\phi_n(x)}\ dx
+\end{equation}
+\end{minipage} 
+\caption{Adding spaces into equations}
+\label{fig:spaceInEquation}
+\end{figure}
+
+In figure \ref{fig:spaceInEquation}, three negative spaces are added on line 2 before \texttt{f(x)} to reduce the space from integral sign. And on line 3, a space is added to separate \texttt{dx} from the integrand.
+
+\subsection{Writing Matrices}
+	The \texttt{amsmath} package has the \texttt{\textbackslash matrix} environment for writing matrices. The \LaTeX{} mechanism for matrices is different. It uses \& to separate values in different columns and \textbackslash{}\textbackslash{} to separate values in different rows. 
+
+\paragraph{Warning :}
+	There is a different environment for writing tabular data which supports an additional mechanism to add lines to separate columns and rows. Even if you don't need lines, you shouldn't write tabular data using the \texttt{matrix} environment.
+
+\subsection{Matrices with different delimiters}
+	The \texttt{amsmath} package supports different delimiters for matrices. The environments \texttt{pmatrix}, \texttt{bmatrix}, \texttt{Bmatrix}, \texttt{vmatrix} and \texttt{Vmatrix} adds ( ), [ ], \{ \}, $|\ |$ and $\|\ \|$ respectively. For example, \$\textbackslash begin\{vmatrix\} \dots \textbackslash end\{vmatrix\}\$ may be used for writing determinants.
+	
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.4\textwidth}
+\begin{Verbatim}[numbers = left]
+Suppose,
+\begin{equation}
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix}
+= \begin{bmatrix}
+\frac{a_{11}}{a_{22}} & 
+-\frac{\sqrt[3]{a_{12}}}{a_{21}} 
+\end{bmatrix}
+\end{equation}
+\end{Verbatim}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+Suppose,
+\begin{equation}
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2
+\end{bmatrix}
+= \begin{bmatrix}
+\frac{a_{11}}{a_{22}} & 
+-\frac{\sqrt[3]{a_{12}}}{a_{21}} 
+\end{bmatrix}
+\end{equation}
+\end{minipage} 
+\caption{Equations involving matrices}
+\label{fig:matrixEquation}
+\end{figure}
 
 \end{document}
 
