@@ -4,6 +4,7 @@
 \usepackage{fancyvrb}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{subcaption}
 
 \title{Latex Certificate Course Instructions}
 \author{Jacob Antony}
@@ -70,19 +71,19 @@
 	The recent version uses \texttt{\textbackslash fancyhead} and \texttt{\textbackslash fancyfoot} commands for page headers and footers. \texttt{fancyhdr} has the following selectors for the page locators,
 \begin{table}[h]
 \centering
-\begin{minipage}{0.45\textwidth}
+\begin{subfigure}{0.45\textwidth}
 \begin{description} 
 	\item[L] Left,
 	\item[R] Right,
 	\item[C] Center,
 \end{description}
-\end{minipage}
-\begin{minipage}{0.45\textwidth}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
 \begin{description} 
 	\item[O] Odd-numbered page, and
 	\item[E] Even-numbered page
 \end{description}
-\end{minipage}
+\end{subfigure}
 \caption{Page Locators for \texttt{fancyhdr}}
 \end{table}
 

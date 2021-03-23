@@ -15,11 +15,11 @@ Day 05 Packages : fancyhdr, geometry, Optional arguments
 
 # Module 2
 
-Day 06 Basic Mathematics : operators, greek letters, Math mode
+Day 06 Basic Mathematics : operators, greek letters, math mode
 
-Day 07 equation, spacing, frac, multiple arguments, matrix
+Day 07 amsmath : equation, spacing, frac, sqrt, and matrix
 
-Day 08 AMS Pakcages : Theorem and proof
+Day 08 amsthm : Definition, Theorem and Proof
 
 # Module 3
 
@@ -27,7 +27,7 @@ Day 09 Reference, Environments : tabular, figure
 
 Day 10 bibliography : cite, bibtex
 
-Day 11 newcommand, counters, parameters
+Day 11 newcommand, counters, parameters(linewidth)
 
 # Module 4
 
@@ -38,3 +38,4 @@ Day 13 overlay
 Day 14 transition
 
 Day 15 handout
+

@@ -5,6 +5,7 @@
 \usepackage{fancyvrb}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{subcaption}
 
 \title{Latex Certificate Course Instructions}
 \author{Jacob Antony}
@@ -38,7 +39,7 @@ The \text{amsmath} package also provides the following commands,
 	The \texttt{amsmath} package has \texttt{equation} environment for writing equations.
 \begin{figure}[h]
 \centering
-\begin{minipage}{0.45\textwidth}
+\begin{subfigure}{0.45\textwidth}
 \begin{Verbatim}[numbers = left]
 \usepackage{amsmath}
 ...
@@ -49,12 +50,12 @@ e^{i\pi} + 1 = 0
 \end{equation}
 ...
 \end{Verbatim}
-\end{minipage}
-\begin{minipage}{0.45\textwidth}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
 \begin{equation}
 e^{i\pi} + 1 = 0
 \end{equation}
-\end{minipage} 
+\end{subfigure}
 \caption{Writing equations}
 \label{fig:equation}
 \end{figure}
@@ -66,12 +67,19 @@ e^{i\pi} + 1 = 0
 
 	Also whenever you switch between \texttt{equation} and \texttt{equation*} or \texttt{itemize} and \texttt{enumerate}. You should change both \texttt{\textbackslash begin} and \texttt{\textbackslash end} commands. First you should update both the environment delimiters, and then think about its contents.
 
-\subsubsection{Adding text into equations}
+\subsection{Display Math Mode}
+	The delimiters for display math mode are \textbackslash[ and \textbackslash]. The mathematical expression written in display math mode is printed on a separate line.
+	
+	For example, \textbackslash[ \textbackslash sum\_\{i = 0\}\textasciicircum n 2\textasciicircum n = 2\textasciicircum\{n+1\} - 1 \textasciicircum] prints, \[ \sum_{i = 0}^n 2^n = 2^{n+1} - 1 \]
+
+	Display math mode is quite useful if the equation doesn't require any numbering or specific alignment.
+
+\subsection{Adding text into equations}
 	\LaTeX{} has a different mechanism for adding text inside math mode. This mechanism is useful in adding text into equations written using \texttt{equation}.
 
 \begin{figure}[h]
 \centering
-\begin{minipage}{0.45\textwidth}
+\begin{subfigure}{0.45\textwidth}
 \begin{Verbatim}[numbers = left]
 \begin{equation}
 f \circ g(\bar{x}) = f(y)
@@ -79,14 +87,14 @@ f \circ g(\bar{x}) = f(y)
 g(\bar{x}) = y
 \end{equation}
 \end{Verbatim}
-\end{minipage}
-\begin{minipage}{0.45\textwidth}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
 \begin{equation}
 f \circ g(\bar{x}) = f(y)
 \text{ where }
 g(\bar{x}) = y
 \end{equation}
-\end{minipage} 
+\end{subfigure} 
 \caption{Adding text in Equations}
 \label{fig:textAndEquation}
 \end{figure}
@@ -98,19 +106,19 @@ g(\bar{x}) = y
 
 \begin{figure}[h]
 \centering
-\begin{minipage}{0.45\textwidth}
+\begin{subfigure}{0.45\textwidth}
 \begin{Verbatim}[numbers = left]
 \begin{equation}
 a_n = \int_0^{2\pi}\!\!\!
 f(x)\overline{\phi_n(x)}\ dx
 \end{equation}
 \end{Verbatim}
-\end{minipage}
-\begin{minipage}{0.45\textwidth}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
 \begin{equation}
 a_n = \int_0^{2\pi}\!\!\! f(x)\overline{\phi_n(x)}\ dx
 \end{equation}
-\end{minipage} 
+\end{subfigure} 
 \caption{Adding spaces into equations}
 \label{fig:spaceInEquation}
 \end{figure}
@@ -128,7 +136,7 @@ In figure \ref{fig:spaceInEquation}, three negative spaces are added on line 2 b
 	
 \begin{figure}[h]
 \centering
-\begin{minipage}{0.4\textwidth}
+\begin{subfigure}{0.4\textwidth}
 \begin{Verbatim}[numbers = left]
 Suppose,
 \begin{equation}
@@ -145,8 +153,8 @@ x_1 \\ x_2
 \end{bmatrix}
 \end{equation}
 \end{Verbatim}
-\end{minipage}
-\begin{minipage}{0.5\textwidth}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
 Suppose,
 \begin{equation}
 \begin{bmatrix}
@@ -161,26 +169,9 @@ x_1 \\ x_2
 -\frac{\sqrt[3]{a_{12}}}{a_{21}} 
 \end{bmatrix}
 \end{equation}
-\end{minipage} 
+\end{subfigure} 
 \caption{Equations involving matrices}
 \label{fig:matrixEquation}
 \end{figure}
 
 \end{document}
-
-\begin{figure}[h]
-\centering
-\begin{minipage}{0.45\textwidth}
-\begin{Verbatim}[numbers = left]
-...
-\end{Verbatim}
-\end{minipage}
-\begin{minipage}{0.45\textwidth}
-...
-\end{minipage} 
-\caption{cap}
-\label{fig:cap}
-\end{figure}
-
-\subsection{Cross-referencing}
-Suppose you want to refer to an image/table in the same document on a different page. \LaTeX{} does have provisions for references. You are not yet there. You should mention page number explicitly as the page numbers might change as your add/remove sentences. 

@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm}
+\usepackage[inline,shortlabels]{enumitem}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{subcaption}
+
+\newtheorem{thm}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{Def}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{Rmk}{Remark}[section]
+\newtheorem*{Nt}{Note}
+
+\title{Latex Certificate Course Instructions}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{amsthm Package}
+	The \texttt{amsthm} package is used for environments to writing definitions, lemmas and theorems. The current version of this package is 2.20.6 and is maintained by American Mathematical Society. The documentation is available at \href{https://ctan.org/pkg/amsthm}{CTAN}.
+
+	The \texttt{amsthm} package has following commands,
+\begin{description}
+	\item[theoremstyle] to change environment style --- \texttt{plain}, \texttt{definition}, \texttt{remark}
+	\item[newtheorem] to create definition/ theorem/ remark environments
+\end{description}
+
+\section{newtheorem Command}
+	The \texttt{newtheorem} command is used to create environments for defintion/ theorem/ remark.
+
+\subsection{Definition Environment}
+	The theoremstyle \texttt{definition} creates environments with boldface head text and normal body text.
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{Def}{Definition}%
+[section]
+...
+\begin{document}
+...
+\begin{Def}
+A relation on $A$ is
+a subset of $A \times A$.
+\end{Def}
+\end{Verbatim}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+\begin{Def}
+A relation on $A$ is
+a subset of $A \times A$.
+\end{Def}
+\end{subfigure} 
+\caption{The Definition Environment}
+\label{fig:defEnvironment}
+\end{figure}
+
+\paragraph{Warning :}
+	The \texttt{def} is a reserved word. Thus, you can use \texttt{def} for definition environment.
+
+\subsection{Theorem Environment}
+	The theoremstyle \texttt{plain} creates environments with boldface head text and italic body text.
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}%
+[section]
+...
+\begin{document}
+...
+\begin{thm}
+Field of quotients of
+an integral domain are
+isomorphic.
+\end{thm}
+...
+\end{Verbatim}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+\begin{thm}
+Field of quotients of
+an integral domain are
+isomorphic.
+\end{thm}
+\end{subfigure} 
+\caption{The Theorem Environment}
+\label{fig:thmEnvironment}
+\end{figure}
+
+\subsection{Remark Environment}
+	The theoremstyle \texttt{remark} creates environments with italic head text and normal body text.
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\usepackage{amsthm}
+\theoremstyle{remark}
+\newtheorem{Rmk}{Remark}%
+[section]
+...
+\begin{document}
+...
+\begin{Rmk}
+The set of all integers is
+an integral domain.
+\end{Rmk}
+...
+\end{Verbatim}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+\begin{Rmk}
+The set of all integers is
+an integral domain.
+\end{Rmk}
+\end{subfigure} 
+\caption{The Remark Environment}
+\label{fig:rmkEnvironment}
+\end{figure}
+
+\section{proof Environment}
+	The \texttt{proof} environments has italic head (\textit{proof}), normal body text and terminates with a QED symbol.
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\begin{proof}
+Let $X$ be a metric space
+and $f$ be the Urysohn's
+function. Then $f$ is not
+uniformly continuous.
+\end{proof}
+\end{Verbatim}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+\begin{proof}
+Let $X$ be a metric space
+and $f$ be the Urysohn's
+function. Then $f$ is not
+uniformly continuous.
+\end{proof}
+\end{subfigure} 
+\caption{The Proof Environment}
+\label{fig:proof}
+\end{figure}
+
+%	The \texttt{amsthm} package has \texttt{newtheoremstyle} command for defining new environment styles. This command takes 9 arguments --- name of style, space above, space below, body font, indent size, head font, punctuation after head, space after head, and head specification.
+
+\end{document}
