@@ -25,9 +25,9 @@ Day 08 amsthm : Definition, Theorem and Proof
 
 Day 09 Reference, Environments : tabular, figure
 
-Day 10 bibliography : cite, bibtex
+Day 10 Spaces, Bibliography
 
-Day 11 newcommand, counters, parameters(linewidth)
+Day 11 lengths, counters, newcommand, newenvironment, textcomp, detexify
 
 # Module 4
 

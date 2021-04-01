@@ -1,0 +1,232 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm}
+\usepackage[inline,shortlabels]{enumitem}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{textcomp}
+\usepackage{multicol}
+%\usepackage{biblatex}
+
+\newtheorem{thm}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{Def}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{Rmk}{Remark}[section]
+\newtheorem*{Nt}{Note}
+
+\newcommand{\group}[2]{\langle #1,#2 \rangle}
+\newcommand{\textgroup}[2]{\textlangle #1,#2 \textrangle}
+
+\title{Latex Certificate Course Instructions}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+	\LaTeX{} supports lengths and counters for document configuration. The lengths decides the dimension of different elements of the document including headers, footers, paragraphs, images, tables, \dots. And counters are used for numbering chapters, sections, paragraphs, equations, tables, figures, definitions, theorems, items on a list, \dots.
+
+\section{Lengths}
+	The following are default length commands in \LaTeX{},
+\begin{multicols}{3}
+\begin{itemize}
+	\item \texttt{\textbackslash baselineskip} 
+	\item \texttt{\textbackslash baselinestretch} 
+	\item \texttt{\textbackslash columnsep} 
+	\item \texttt{\textbackslash columnwidth} 
+	\item \texttt{\textbackslash evensidemargin}
+	\item \texttt{\textbackslash linewidth}
+	\item \texttt{\textbackslash oddsidemargin}
+	\item \texttt{\textbackslash paperwidth}
+	\item \texttt{\textbackslash paperheight}
+	\item \texttt{\textbackslash parindent}
+	\item \texttt{\textbackslash parskip}
+	\item \texttt{\textbackslash tabcolsep}
+	\item \texttt{\textbackslash textheight}
+	\item \texttt{\textbackslash textwidth}
+	\item \texttt{\textbackslash topmargin}
+	\item \texttt{\textbackslash unitlength}
+\end{itemize}
+\end{multicols}
+
+\subsection{Length related Commands}
+	And \LaTeX{} has following commands for managing the lengths,
+\begin{description}
+	\item[\textbackslash newlength] to create a new length
+	\item[\textbackslash setlength] to assign a value to a length
+	\item[\textbackslash addtolength] to add a value to a length
+\end{description}
+
+For example, \texttt{\textbackslash setlength\{parskip\}\{3pt\}} changes the paragraph separation length to $3$pt. The paragraphs will be separated by a vertical space of $3$pt. The default value of the \textbackslash parskip length is $1$pt which is $\frac{1}{72}$ inches.
+
+\subsection{Unit of Measure}
+	\LaTeX{} support the following units of measure for lengths.
+\begin{multicols}{6}
+\begin{itemize}
+	\item in
+	\item mm
+	\item cm
+	\item pt
+	\item em
+	\item ex
+	\item pc
+	\item bp
+	\item dd
+	\item cc
+	\item sp
+\end{itemize}
+\end{multicols}
+
+\section{Counters}
+	The following are default counters in \LaTeX{}, 
+\begin{multicols}{3}
+\begin{itemize}
+	\item \texttt{part}
+	\item \texttt{chapter}
+	\item \texttt{section} 
+	\item \texttt{subsection}
+	\item \texttt{subsubsection}
+	\item \texttt{paragraph}
+	\item \texttt{subparagraph}
+	\item \texttt{page}
+	\item \texttt{figure}
+	\item \texttt{table}
+	\item \texttt{footnote}
+	\item \texttt{mpfootnote}
+	\item \texttt{equation}
+	\item \texttt{enumi}
+	\item \texttt{enumii}
+	\item \texttt{enumiii}
+	\item \texttt{enumiv}
+\end{itemize}
+\end{multicols}
+
+\subsection{Counter related Commands}
+	And \LaTeX{} uses the following commands for managing the counters,
+\begin{description}
+	\item[\textbackslash newcounter] to create a new counter
+	\item[\textbackslash setcounter] to assign a value to the counter
+	\item[\textbackslash stepcounter] to increment the counter value
+	\item[\textbackslash addtocounter] to add a number to the counter value
+	\item[\textbackslash value] to print the value of the counter
+	\item[\textbackslash the\texttt{CounterName}] to print the value of the counter in a suitable format\\
+		For example, \texttt{\textbackslash thechapter}, \texttt{\textbackslash thesection}, \texttt{\textbackslash theequation}, \dots
+	\item[\textbackslash usecounter] to use a counter value for another counter
+\end{description}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\begin{enumerate}
+\item Depth 1
+\begin{enumerate}
+\item Depth 2
+\begin{enumerate}
+\item Depth 3
+\begin{enumerate}
+\item First
+\setcounter{enumiv}{5}
+\item Sixth
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{Verbatim}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+\begin{enumerate}
+\item Depth 1
+\begin{enumerate}
+\item Depth 2
+\begin{enumerate}
+\item Depth 3
+\begin{enumerate}
+\item First
+\setcounter{enumiv}{5}
+\item Sixth
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{subfigure} 
+\caption{Manipulating Counters}
+\label{fig:counter}
+\end{figure}
+
+For example, \texttt{\textbackslash thesubsection} prints \thesubsection{} where \thesection{} is the current section number and \arabic{subsection} is the current subsection number. And \texttt{\textbackslash setcounter\{enumiv\}\{5\}} assign value $5$ to the \texttt{enumeration} item counter at depth $4$.
+
+\subsection{Printing Counter Value}
+	Other than \texttt{\textbackslash the\textit{CounterName}} commands, there are a few commands for printing the value of these counters in different formats.
+\begin{description}
+	\item[\texttt{\textbackslash arabic}] uses indo-arabic numerals
+	\item[\texttt{\textbackslash roman}] uses roman numerals
+	\item[\texttt{\textbackslash Roman}] uses roman numerals in uppercase
+	\item[\texttt{\textbackslash alph}] uses english alphabets
+	\item[\texttt{\textbackslash Alph}] uses english alphabets in uppercase
+	\item[\texttt{\textbackslash fnsymbol}] uses footnote symbols
+\end{description}
+
+	For example, \texttt{\textbackslash roman\{subsection\}} gives \roman{subsection} which is the current value of the \texttt{subsection} counter in roman numerals.
+
+	In Figure \ref{fig:counter}, you can see in the output that \LaTeX{} uses arabic, alpha, roman, Alph numerals for successively nested enumeration environments. And itemize environments and footnotes at different depth uses different symbols in the same fashion.
+
+\section{Creating Commands}
+	\LaTeX{} allows you to create new commands using the \texttt{\textbackslash newcommand} command. The \texttt{\textbackslash newcommand} commands takes two arguments, first argument is the name of the new command and second argument is its definition. The number of arguments and default arguments are available as optional arguments of this command. Hash character, \# is used for referencing the arguments of the new command being defined.
+
+	For example, \texttt{\textbackslash newcommand\{\textbackslash pde\}[2]\{\textbackslash frac\{\textbackslash partial \#1\}\{\textbackslash partial \#2\}\}} creates a command called \texttt{\textbackslash pde}. Clearly, the new command is suppose to be used in math mode. And \texttt{\$\textbackslash pde\{f(x)\}\{y\}\$} gives $\frac{\partial f(x)}{\partial y}$.
+
+\paragraph{Warning :}
+The mismatch of command modes is quite a grave mistake while defining new commands. All the commands, that are used to define a new command should be either in text mode or in math mode. In above example, both commands used are available in math mode --- \texttt{\textbackslash frac} and \texttt{\textbackslash partial}.
+	
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\usepackage{textcomp}
+\newcommand{\group}[2]%
+{\langle #1,#2 \rangle}
+\newcommand{\textgroup}[2]%
+{\textlangle #1,#2 \textrangle}
+...
+\begin{document}
+...
+We have $\group{G}{\ast}$
+and \textgroup{H}{+}.
+\end{Verbatim}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+\centering
+We have $\group{G}{\ast}$ and \textgroup{H}{+}.
+\end{subfigure} 
+\caption{Creating new Commands}
+\label{fig:cmd}
+\end{figure}
+	
+	In Figure \ref{fig:cmd} at lines 2 and 3,  \texttt{\textbackslash newcommand\{\textbackslash group\}[2]\{\textbackslash langle \#1,\#2 \textbackslash rangle\}} creates the \texttt{\textbackslash group} command which takes two arguments and prints them in between left and right angle brackets, separted by a comma. Also note that these commands will work only inside a math mode. The $\group{G}{\ast}$ is printed using \texttt{\textbackslash group} command.
+	
+	And at lines 4 and 5, \texttt{\textbackslash newcommand\{\textbackslash textgroup\}[2]\{\textlangle \#1,\#2 \textrangle\}} will create the \texttt{\textbackslash textgroup} command which also does the same as former, but outside math modes. And \textgroup{H}{+} is printed using \texttt{\textbackslash textgroup} command.
+
+\subsection{textcomp Package}
+	The \texttt{textcomp} Package is used for accessing the commands for left and right angle brackets in the text mode --- \texttt{\textbackslash textlangle} and \texttt{\textbackslash textrangle}. The documentation on latest version of this package is not available. Clearly, this package requires a command catalogue than a detailed documentation. We don't have a formal catalogue, but \texttt{detexify} can give you commands for different symbols and different charts of symbols are available online.
+
+\subsection{detexify Service}
+	The \texttt{detexify}\footnote{detexify \copyright 2009 Daniel Kirsch, MIT License} is the frontend of \LaTeX{} symbol classifier webservice. It is written in Ruby language. An android version is available at \href{https://play.google.com/store/apps/details?id=website.marty.detexify}{google playstore}. The \url{https://detexify.kirelabs.org/classify.html} is the webpage featuring it. The detexity code is available on \href{https://github.com/kirel/detexify}{Github}.
+
+	In \texttt{detexify}, you can draw symbols by hand and get the commands for matching symbols available in \LaTeX{}. This is quite a useful tool, when you are searching for a specific symbol. However, you should use \texttt{detexify} only as a reference. And learn about the purpose of the command from respective package documentation before use.
+
+\section{Creating Environments}
+	\LaTeX{} allows you to create new environments using the \texttt{\textbackslash newenvironment} command. This command takes three arguments, first argument is the name of the new environment, second is the actions to be performed before entering into the environment and third is the actions to be performed before leaving the environment.
+
+	For example, \texttt{\textbackslash newenvironment\{myFigure\}\{\textbackslash begin\{figure\} \textbackslash centering \textbackslash begin\{tikzpicture\}\} \{\textbackslash end\{tikzpicture\} \textbackslash end\{figure\}\}} will create a new environment \texttt{myFigure}. And \texttt{\textbackslash begin\{myFigure\}} will get you into the new environment and \texttt{\textbackslash end\{myFigure\}} will leave this new environment.
+
+	Before entering into the \texttt{myFigure} environment, the actions in the second argument are performed. That is, every time \texttt{\textbackslash begin\{myFigure\}} occurs, \LaTeX{} enters into \texttt{figure} environment, applies \texttt{\textbackslash centering} to the image, and then enters into \texttt{tikzpicture} environment. And before leaving the environment it performs the actions in the third argument of the \texttt{\textbackslash newenvironment} command.
+
+\paragraph{Warning :}
+	The environment definitions should be crafted very carefully. For example, the nesting of environments follow LIFO \textit{(Last In First Out)} order. That is, the last nested environment entered, is the first environment to leave. In above example, any attempt to leave \texttt{figure} environment before leaving \texttt{tikzpicture} environment will cause an environment delimiter mistmatch error. And error debugging is difficult as the \LaTeX{} error report won't give much hint about the \texttt{\textbackslash newenvironment} command causing the trouble. 
+
+\end{document}

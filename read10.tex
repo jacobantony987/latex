@@ -1,0 +1,137 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm}
+\usepackage[inline,shortlabels]{enumitem}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{tikz}
+%\usepackage{biblatex}
+
+\newtheorem{thm}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{Def}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{Rmk}{Remark}[section]
+\newtheorem*{Nt}{Note}
+
+\title{Latex Certificate Course Instructions}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Adding Spaces}
+	\LaTeX{} has a few commands for adding horizontal and vertical spaces into your document. Also there are different mechanisms for adjusting space before and after tables, figures, paragraphs, \dots.
+
+\subsection{hspace Command}
+	The \texttt{\textbackslash hspace} command is used for adding horizontal space. For example, \texttt{Begin \textbackslash hspace\{1in\} End} gives Begin \hspace{1in} End.
+
+\subsection{vspace Command}
+	The \texttt{\textbackslash vspace} command is used for adding vertical space.
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+Begin
+
+\vspace{1in}
+
+End
+\end{Verbatim}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+Begin
+
+\vspace{1in}
+
+End
+\end{subfigure} 
+\caption{Adding vertical space}
+\label{fig:vspace}
+\end{figure}
+
+\section{Phantom Space}
+	\LaTeX{} has commands for creating blank spaces by adding invisible content. There are three commands --- \texttt{\textbackslash phantom}, \texttt{\textbackslash hphantom} and \texttt{\textbackslash vphantom}.
+\begin{description}
+\item[\texttt{\textbackslash hphantom}] creates blank space of same width
+\item[\texttt{\textbackslash vphantom}] creates blank space of same height
+\item[\texttt{\textbackslash phantom}] creates blank space of of same height and width.
+\end{description}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+Let $x \in X$ and
+$\hphantom{}_3 x_1 =
+C(x,3,1)$.
+\begin{equation}
+\psi(ad) = \phantom{ad = }
+\psi(a)\psi(d)
+\end{equation}
+\end{Verbatim}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+Let $x \in X$ and
+$\hphantom{}_3 x_1 =
+C(x,3,1)$.
+\begin{equation}
+\psi(ad) = \phantom{ad = }
+\psi(a)\psi(d)
+\end{equation}
+\end{subfigure} 
+\caption{Adding Phantom Text}
+\label{fig:phantom}
+\end{figure}
+
+	In Figure \ref{fig:phantom} at line 2, \texttt{\textbackslash hphantom} command is used add a subscript on the left of $x$. And at line 5, \texttt{\textbackslash phantom} command is used to leave a space which is sufficient to fit $ad = $. These commands are quite useful for aligning system of equations as well as tabular data.
+
+\section{Bibliography}
+	\LaTeX{} uses \texttt{thebibliography} environment for Bibliography. The \texttt{\textbackslash bibitem} command is used to add references and to assign names. And \texttt{\textbackslash cite} command is used for references using the names assigned.
+
+	For example, \texttt{\textbackslash cite\{ hoffman \} } gives \cite{hoffman} if you add the following lines before \texttt{\textbackslash end\{document\}}.
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.45\textwidth}
+\begin{Verbatim}[numbers = left]
+\begin{document}
+...
+\begin{thebibliography}{1}
+\bibitem{joshi}
+K. D. Joshi, General Topology
+\bibitem{hoffman}
+Kenneth Hoffman \& Ray Kunuze,
+Linear Algebra, PHI
+\end{thebibliography}
+...
+\end{Verbatim}
+\end{subfigure}
+\begin{minipage}{0.45\textwidth}
+\section*{Reference}
+\begin{enumerate}
+	\item K. D. Joshi, General Topology
+	\item Kenneth Hoffman \& Ray Kunze, Linear Algebra, PHI
+\end{enumerate}
+\end{minipage}
+\caption{thebibliography Environment}
+\label{fig:bib}
+\end{figure}
+
+	The second argument, $1$ of the \texttt{\textbackslash begin\{thebibliography\}\{1\}} indicates that the document has at most $9$ references. \LaTeX{} only considers the numbers of digits of the second argument. For example, \texttt{\textbackslash thebibliography\{12\}} indicates that the document has references, the count of which is in two digits. ie, in between 10 and 99.
+
+\begin{thebibliography}{1}
+\bibitem{kdjoshi} K. D. Joshi, General Topology
+\bibitem{hoffman} Kenneth Hoffman \& Ray Kunuze, Linear Algebra, PHI
+\end{thebibliography}
+
+\section{Bibliography Styles}
+	The way \LaTeX{} prints the bibliography references can be changed using the \texttt{\textbackslash bibliographystyle} command. This command takes arguments \texttt{plain}, \texttt{acm}, \texttt{ieeeter}, \texttt{alpha}, \texttt{abbrv}, and \texttt{siam}.
+
+	And \texttt{natbib} package is famous for a variety of \texttt{cite} commands and bibliography styles. The current version of this package is 8.31b and is maintained by Patrick W. Daly and Arthur Ogawa. The documentation is available at \href{https://ctan.org/pkg/natbib}{CTAN}.
+
+\end{document}
