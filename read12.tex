@@ -19,6 +19,119 @@
 
 \maketitle
 
+\section{Beamer}
+	\LaTeX{} can also make presentations. It has multiple classes for buliding presentations. And \texttt{beamer} class is a popular option. The current version of this \LaTeX{} class is 3.62. And is maintained by samcarter and Joseph Wright. The class documentation is available at \href{https://ctan.org/pkg/beamer}{CTAN}.
+	
+	\LaTeX{} documents can have one class and multiple packages. Package provides commands that work almost everywhere whereas Class is used for imposing documentation standards suggested by different institutions or to build special purpose documents - presentations, books, thesis, poster, brochure, calendar, \dots .
+	
+\subsection{frame environment}
+	The presentations made using beamer class are called beamer presentations. The \texttt{frames} are the building blocks of a \texttt{beamer} presentation. And \texttt{frame} environment is used to define frames. And \texttt{\textbackslash frametitle} command is used for frame titles. The frames gives a structure to the slides. Using overlay, you can build multiple slides from a frame which we will see later.
+
+\subsection{Presentation Themes}
+The following are a few popular themes.
+\begin{enumerate*}
+	\item AnnArbor
+	\item Antibes
+	\item Bergen
+	\item Berkeley
+	\item Berlin
+	\item Boadilla
+	\item CambridgeUS
+	\item Copenhagen
+	\item Darmstadt
+	\item Dresden
+	\item Frankfurt
+	\item Goettingen
+	\item Hannover
+	\item Ilmenau
+	\item JuanLesPins
+	\item Luebeck
+	\item Madrid
+	\item Malmoe
+	\item Marburg
+	\item Montpellier
+	\item PaloAlto
+	\item Pittsburgh
+	\item Rochester
+	\item Singapore
+	\item Szeged
+	\item Warsaw
+\end{enumerate*}
+
+A few themes above might require that you install the theme before you use them.
+%Visit \url{https://latex.simon04.net/} for a few more themes. 
+The \texttt{\textbackslash usetheme} command is used for applying a theme to your beamer presentation. This command is written in the preamble. For example, \texttt{\textbackslash usetheme\{Warsaw\}} will apply \texttt{Warsaw} theme to your beamer presentation. 
+
+\subsection{Colour Themes}
+\LaTeX{} beamer has a few popular color themes,
+\begin{enumerate*}
+	\item albatross
+	\item beaver
+	\item beetle
+	\item crane
+	\item dolphin
+	\item dove
+	\item fly
+	\item lily
+	\item orchid
+	\item rose
+	\item seagull
+	\item seahorse
+	\item whale
+	\item wolverine
+\end{enumerate*}
+
+	The \texttt{\textbackslash usecolortheme} command is used for changing colors for a selected theme. For example, \texttt{\textbackslash usecolortheme\{seagull\}} will apply \texttt{seagull} color theme for different presentation themes. For a quick decision you may use \href{https://hartwork.org/beamer-theme-matrix/}{theme matrices}.
+
+	Once again, we start from the content. You may apply some presentation theme and color theme. But, you should try to complete the content before searching for a theme and colour scheme suitable to your audience and content.
+
+\section{An Example}
+	The beamer presentation syntax is quite the same. The sectioning commands, text formatting commands, list environments, math mode, mathematics environments \dots are available.
+
+	The difference is that the typesetting is quite different for beamer presentation. For example, the list bullets are quite different for the slides but we always write them the same way we wrote lists in \LaTeX{} articles and books.
+
+	We usually write the sectioning commands outside frames. And you can see that \LaTeX{} only prints what is written inside \texttt{frame} environment. You might be wonder why would someone write material which are not going to be printed. The \LaTeX{} system wants you to write your content in a structured way. Even though, the titles of the sectioning commands are not printed as frame titles - you can use them for table of contents, references as well as for headers/footers. And a few themes uses these sectioning commands for slide navigations as well.
+
+\begin{figure}[h]
+\centering
+\begin{Verbatim}[numbers = left]
+\documentclass{beamer}
+
+\usepackage{graphicx}
+
+\usetheme{Warsaw}
+\usecolortheme{seagull}
+
+\title{Demo Presentation}
+\author{Jacob Antony}
+\institution{KE College, Mannanam}
+\date{\today}
+
+\begin{document}
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}
+\frametitle{Contents}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+\begin{frame}
+\frametitle{Frame Title}
+Content goes here
+\end{frame}
+\end{document}
+\end{Verbatim}
+\caption{Beamer Presentation}
+\label{fig:beamer}
+\end{figure}
+
+	In Figure \ref{fig:beamer} at line 10, you can see that \texttt{beamer} has \texttt{\textbackslash institution} command for \texttt{title}. Other commands are already familiar to you.
+
+	One advantage of using \LaTeX{} to build your presentation is that you can build presentation from an existing \LaTeX{} document. Thus, you can reuse almost all your content --- figures, tables, equations, theorems, \dots.
+
 \end{document}
 
 \begin{figure}[h]
