@@ -1,4 +1,5 @@
 \documentclass{article}
+
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm}
 \usepackage[inline,shortlabels]{enumitem}
@@ -25,10 +26,15 @@
 	\LaTeX{} documents can have one class and multiple packages. Package provides commands that work almost everywhere whereas Class is used for imposing documentation standards suggested by different institutions or to build special purpose documents - presentations, books, thesis, poster, brochure, calendar, \dots .
 	
 \subsection{frame environment}
-	The presentations made using beamer class are called beamer presentations. The \texttt{frames} are the building blocks of a \texttt{beamer} presentation. And \texttt{frame} environment is used to define frames. And \texttt{\textbackslash frametitle} command is used for frame titles. The frames gives a structure to the slides. Using overlay, you can build multiple slides from a frame which we will see later.
+	The presentations made using beamer class are called beamer presentations. The \texttt{frames} are the building blocks of a \texttt{beamer} presentation. Beamer uses \texttt{frame} environment to define frames. And \texttt{\textbackslash frametitle} command is used for frame titles. The frames gives a structure to the slides. Using \texttt{\textbackslash pause} command, you can build multiple slides from a frame which we will see later.
+
+\section{Themes}
+	We have presenation themes in Beamer. Beamer also allows us to use four different class of themes --- color, font, inner and outer. The presentation themes contain a particular combination of these four themes. The color themes decides the color, font themes the font, inner themes the contents of a frame and outer the header, footer, navigation, and sidebars.
+
+	The font, inner and outer theme details are available in beamer documentation available at CTAN. A list of popular presentation and color themes are given,
 
 \subsection{Presentation Themes}
-The following are a few popular themes.
+The following are a few presentation themes.
 \begin{enumerate*}
 	\item AnnArbor
 	\item Antibes
@@ -40,6 +46,7 @@ The following are a few popular themes.
 	\item Copenhagen
 	\item Darmstadt
 	\item Dresden
+	\item EastLansing
 	\item Frankfurt
 	\item Goettingen
 	\item Hannover
@@ -63,7 +70,7 @@ A few themes above might require that you install the theme before you use them.
 The \texttt{\textbackslash usetheme} command is used for applying a theme to your beamer presentation. This command is written in the preamble. For example, \texttt{\textbackslash usetheme\{Warsaw\}} will apply \texttt{Warsaw} theme to your beamer presentation. 
 
 \subsection{Colour Themes}
-\LaTeX{} beamer has a few popular color themes,
+\LaTeX{} beamer has a few color themes,
 \begin{enumerate*}
 	\item albatross
 	\item beaver
@@ -73,83 +80,66 @@ The \texttt{\textbackslash usetheme} command is used for applying a theme to you
 	\item dove
 	\item fly
 	\item lily
+	\item monarca
 	\item orchid
 	\item rose
 	\item seagull
 	\item seahorse
+	\item spruce
 	\item whale
 	\item wolverine
 \end{enumerate*}
 
-	The \texttt{\textbackslash usecolortheme} command is used for changing colors for a selected theme. For example, \texttt{\textbackslash usecolortheme\{seagull\}} will apply \texttt{seagull} color theme for different presentation themes. For a quick decision you may use \href{https://hartwork.org/beamer-theme-matrix/}{theme matrices}.
+	The \texttt{\textbackslash usecolortheme} command is used for changing colors for a selected theme. For example, \texttt{\textbackslash usecolortheme\{seagull\}} will apply \texttt{seagull} color theme to different presentation themes. For a quick decision you may use \href{https://hartwork.org/beamer-theme-matrix/}{theme matrices}.
 
 	Once again, we start from the content. You may apply some presentation theme and color theme. But, you should try to complete the content before searching for a theme and colour scheme suitable to your audience and content.
 
-\section{An Example}
-	The beamer presentation syntax is quite the same. The sectioning commands, text formatting commands, list environments, math mode, mathematics environments \dots are available.
+\section{What's so special about Beamer ?}
+	For beamer presentations, the \LaTeX{} syntax is quite the same. The sectioning commands, text formatting commands, list-figure-table environments, math mode, mathematics environments from AMS are all available.
 
-	The difference is that the typesetting is quite different for beamer presentation. For example, the list bullets are quite different for the slides but we always write them the same way we wrote lists in \LaTeX{} articles and books.
+	The difference is that the typesetting is quite different for beamer presentation. For example, the list bullets looks quite different for the slides. But we always write them the same way we wrote lists in \LaTeX{} articles and books. \LaTeX{} document classes are designed to makes suitable changes automatically.
 
-	We usually write the sectioning commands outside frames. And you can see that \LaTeX{} only prints what is written inside \texttt{frame} environment. You might be wonder why would someone write material which are not going to be printed. The \LaTeX{} system wants you to write your content in a structured way. Even though, the titles of the sectioning commands are not printed as frame titles - you can use them for table of contents, references as well as for headers/footers. And a few themes uses these sectioning commands for slide navigations as well.
+\subsection{Front Matter}
+\subsubsection{Title Page}
+	The \texttt{\textbackslash maketitle} command inside a frame environment will generates the title page with the help of \texttt{\textbackslash title}, \texttt{\textbackslash author}, \texttt{\textbackslash institute} and \texttt{\textbackslash date} commands.
+
+\subsubsection{Contents Page}
+	The \texttt{\textbackslash tableofcontents} command inside a frame environment will generate navigation enabled table of contents slide with the help of sectioning commands used in the document.
+
+	\paragraph{Note :} The sectioning commands are usually written outside frame enviroments as we often don't want to display them on slides. And you can see that \LaTeX{} only prints what is written inside \texttt{frame} environment.
+	
+	You might be wonder why would someone write material which are not going to be printed. The \LaTeX{} system wants you to write your content in a structured way.
+	
+	Though, the titles of the sectioning commands are not printed as frame titles --- beamer uses them for table of contents, references as well as for headers/footers. And a few themes uses these sectioning commands for slide navigations as well.
 
 \begin{figure}[h]
 \centering
 \begin{Verbatim}[numbers = left]
 \documentclass{beamer}
-
 \usepackage{graphicx}
-
 \usetheme{Warsaw}
 \usecolortheme{seagull}
-
-\title{Demo Presentation}
+\title{Beamer Presentation}
+\subtitle{An introduction to presentations written in \LaTeX{}}
 \author{Jacob Antony}
-\institution{KE College, Mannanam}
+\institute{KE College, Mannanam}
 \date{\today}
 
 \begin{document}
-\begin{frame}
-\maketitle
-\end{frame}
-
-\begin{frame}
-\frametitle{Contents}
-\tableofcontents
-\end{frame}
+\begin{frame} \maketitle \end{frame}
+\begin{frame} \frametitle{Contents} \tableofcontents \end{frame}
 
 \section{Introduction}
-\begin{frame}
-\frametitle{Frame Title}
-Content goes here
-\end{frame}
+\begin{frame} \frametitle{Frame Title}
+Collatz Conjecture
 \end{document}
 \end{Verbatim}
 \caption{Beamer Presentation}
 \label{fig:beamer}
 \end{figure}
 
-	In Figure \ref{fig:beamer} at line 10, you can see that \texttt{beamer} has \texttt{\textbackslash institution} command for \texttt{title}. Other commands are already familiar to you.
+	In Figure \ref{fig:beamer} at line 6, \texttt{\textbackslash subtitle} command is available in Beamer documents to give a short description of the title. And at line 8, we have \texttt{\textbackslash institute} command for adding institution's name into the title page. At line 12, title slide is created. At line 13, table of contents slide is created. And at lines 16-18, a sample slide is created.
 
 	One advantage of using \LaTeX{} to build your presentation is that you can build presentation from an existing \LaTeX{} document. Thus, you can reuse almost all your content --- figures, tables, equations, theorems, \dots.
 
 \end{document}
-
-\begin{figure}[h]
-\centering
-\begin{subfigure}{0.45\textwidth}
-\begin{Verbatim}[numbers = left]
-...
-\end{Verbatim}
-\end{subfigure}
-\begin{subfigure}{0.45\textwidth}
-...
-\end{subfigure} 
-\caption{cap}
-\label{fig:cap}
-\end{figure}
-
-Missing Contents
-================
-hrulefill, dotfill, rule, vfill, hfill, 
-~ no line break \- possible line break
-

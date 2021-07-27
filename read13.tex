@@ -1,0 +1,81 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm}
+\usepackage[inline,shortlabels]{enumitem}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{textcomp}
+\usepackage{multicol}
+%\usepackage{biblatex}
+
+\title{Latex Certificate Course Instructions}
+\author{Jacob Antony}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Overlay Commands}
+
+\subsection{pause Command}
+	In presentations, you often want to display important material only after explaining their context. The \texttt{\textbackslash pause} command allows you to put a pause. This command creates a whole new slide for the content after it. But, beamer won't count them as a different page. The output pdf will have different page numbers which won't show on screen during pdf presentation.
+
+\subsection{visible Command}
+	The \texttt{\textbackslash visible} command is used to display an element on slides specified. However, the content is printed transparently on other slides. Thus, only those who are close to the screen can possibly read them. And for those who are sitting away from screen will only see the blank space reserved.
+
+\subsection{uncover Command}
+	The \texttt{\textbackslash uncover} command is used to display an element on slides specified. However, space is reserved for the content on other slides.
+
+\subsection{only Command}
+	The \texttt{\textbackslash only} command is used to display an elment of slides specified. But, it does not print transparently or reserve space. Thus, you will have to give special attention to the slide animation details as the slide looks totally different when this new content appears in between already existing material on that page.
+
+\section{Beamer : Specifications}
+	Beamer redefine commands and environments to support specifications for overlay, action, \dots. The specifications are written in angle brackets $\langle$ and $\rangle$. In other words, the angle brackets $\langle,\rangle$ are the specification delimiters.
+
+	You are already familiar with \texttt{\textbackslash pause} command. But, there is a stronger mechanism for better control of such animations. The \texttt{overlay specifications} allows you to enable/disable differerent commands/environments on different slides.
+
+\begin{description}
+	\item[$\langle3-\rangle$] from slide 3 onwards
+	\item[$\langle-4\rangle$] upto slide 4
+	\item[$\langle2\rangle$] on slide 2
+	\item[$\langle+-\rangle$] on next slide
+	\item[$\langle.-\rangle$] on the same slide
+\end{description}
+For example, \texttt{\textbackslash textbf $\langle-3,6-8, 10-\rangle $\{Sample\}} is a command with an overlay specification. The text `Sample' appears normal in slides $4$, $5$, and $9$. And it appears boldface in remaining slides.
+
+\subsection{Frame Overlay Specifications}
+	You can apply overlay specification on the \texttt{frame} environment. For example, \texttt{\textbackslash begin\{frame\}$\langle+-\rangle$} assigns $\langle+-\rangle$, the \textbf{incremental overlay specification} to its contents.
+
+\subsection{List Overlay Specification}
+	Overlay specification on list environments is applied on each item of the list. For example, \texttt{\textbackslash begin\{itemize\}$\langle+-\rangle$} assigns overlay specification $\langle+-\rangle$ to each item on the list. Thus each item on the list appears in successive slides of that frame.
+
+\begin{figure}[h]
+\centering
+\begin{Verbatim}[numbers = left]
+...
+\begin{document}
+\section{Noncommutative Examples}
+\begin{frame}
+\frametitle{Ring of Endomorphisms}
+\begin{itemize}
+\item<.-> Suppose $A$ is an abelian group.
+\item<.-> $End(A)$, the set of all homomorphisms from $A$ into $A$
+\item<+-> Addition, $\phi+\psi(x) = \phi(x) + \psi(x)$
+\item<.-> Multiplication, $\phi\cdot\psi(x) = \phi(\psi(x))$
+\item<+-> $End(A)$ is a non-commutative Ring.
+\end{itemize}
+\end{frame}
+...
+\end{Verbatim}
+\caption{Overlay Specifications}
+\label{fig:overlay}
+\end{figure}
+
+	In figure\ref{fig:overlay}, at line 3 we have \texttt{\textbackslash section} command outside the frame environment. And at line 5, the title for all the slides of the frame is assigned. There are two incremental overlay specifications. And this frame has three slides. The first slide of the frame will have the frame title and first two items on the list. Second slide of it  will have everything except the last. And third slide of it will have the entire list.
+	
+\end{document}

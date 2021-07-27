@@ -33,9 +33,9 @@ Day 11 lengths, counters, newcommand, newenvironment, textcomp, detexify
 
 Day 12 beamer : slides, themes
 
-Day 13 overlay
+Day 13 overlay specifications : frame, list, item 
 
-Day 14 transition
+Day 14 transition, 0-slide frame
 
-Day 15 handout
+Day 15 handout, note, block, mathematics environments
 
